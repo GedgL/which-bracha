@@ -1,0 +1,1100 @@
+{
+  "_meta": {
+    "title": "Which Bracha? — flowchart data",
+    "note": "MIXED CONTENT. Sourced from Rabbi Schneur Zalman of Liadi's Shulchan Aruch HaRav, Orach Chaim (via Chabad.org, Eliyahu Touger/Sholom B. Wineberg translation), at 'core rulings only' depth: siman 202 (cat_tree_fruit branch), siman 203 (cat_ground_produce branch), siman 204 (meat/fish/dairy/eggs default, general food-spoilage downgrade rule, water-only-blessed-when-thirsty rule, extra wine detail folded into final_hagafen), siman 205 (vegetables raw-vs-cooked, veggie juice/cooking-water), and siman 207 (bracha achrona — Borei Nefashot text and when it applies, now filled into every final node's bracha_achrona field where it's the correct after-blessing). Simanim 206, 213, 214, and 215 (interruptions/errors while reciting a blessing, holding food in the right hand, doubt-resolution defaults, equinox/dangerous-water customs, fulfilling another person's obligation by reciting on their behalf, the required 'Baruch...Melech ha'olam' wording formula, and the rules for answering Amen) were all reviewed but are mechanics/procedure of blessing recitation rather than which-bracha-to-say logic, so none were built into new branches — this app is scoped to category determination, not the full liturgical mechanics of brachot. All 10 chapters supplied so far (202-207, 212-215) have now been reviewed at least once. Minor edge-case machloket (unripe almonds, inferior wild berries, capers, sugar cane, doubt cases, curative/forced-eating cases, ikar/tafel honey mixtures, etc.) intentionally omitted for this pass. Explanations are written in plain, layman-friendly language; the fuller technical/halachic reasoning is kept in each source's footnote 'note' field for readers who want to dig deeper. IMPORTANT GAP: the bread-vs-mezonot rules (cat_bread, bread_meal_context, cat_mezonot, final_hamotzi, final_mezonot — normally siman 208 in the standard Shulchan Aruch numbering) CANNOT be sourced from the Shulchan Aruch HaRav, because siman 208 does not survive in the Alter Rebbe's original text (confirmed repeatedly by 'this section is not extant in the Alter Rebbe's Shulchan Aruch' footnotes in chapters 202, 204, and 207 — siman 207:1 explicitly excludes the five grains and the five shivat-haminim fruits from the general Borei Nefashot rule, pointing to the missing 208 for their real after-blessing text: Al Hamichyah for grain, Al Hagefen for wine, Al Ha'etz for the other four). These nodes (final_hamotzi's Birkat Hamazon achrona, final_mezonot's Al Hamichyah achrona, final_hagafen's Al Hagefen achrona, and the whole bread/mezonot bracha-rishona branch) remain PLACEHOLDER CONTENT until the user supplies an alternate source (e.g. the Mechaber's Shulchan Aruch, Mishnah Berurah, or the Alter Rebbe's own supplementary Seder Birkas HaNehenin/Luach Birkas HaNehenin, which the footnotes repeatedly cite as the closest surviving parallel). The mixed-foods branch (mixed_start and descendants) is now sourced from siman 212 (ikar/tafel — primary food's blessing covers secondary food), at core-rulings depth: grain supremacy in a mixture, dominant/majority-component rule, and the accompaniment case (eating one food only to help with another, e.g. bread with salty fish). Nodes carry \"placeholder\": false once genuinely sourced; \"placeholder\": true and the literal string PLACEHOLDER still mark content awaiting real source text. Do not treat placeholder nodes as halachically authoritative. Citations for real Shulchan Aruch HaRav content are precise (siman:seif); \"link\" fields are left empty until a specific chabad.org/Sefaria URL for that siman can be confirmed rather than guessed.",
+    "startNode": "start"
+  },
+  "nodes": {
+
+    "start": {
+      "id": "start",
+      "is_final": false,
+      "placeholder": true,
+      "question": "What are you eating or drinking?",
+      "question_he": "מה אתה אוכל או שותה?",
+      "options": [
+        { "label": "Bread", "label_he": "לחם", "next": "cat_bread" },
+        { "label": "Mezonot / grain product (cake, pastry, pasta, cereal, etc.)", "label_he": "מזונות (עוגה, פשטידה, פסטה, דגנים וכו')", "next": "cat_mezonot" },
+        { "label": "Fruit", "label_he": "פרי", "next": "cat_tree_fruit" },
+        { "label": "Vegetable", "label_he": "ירק", "next": "cat_ground_produce" },
+        { "label": "Wine or grape juice", "label_he": "יין או מיץ ענבים", "next": "final_hagafen" },
+        { "label": "Other drinks (water, soda, coffee, tea, non-grape juice)", "label_he": "משקאות אחרים", "next": "cat_other_drinks" },
+        { "label": "Meat, fish, dairy, or eggs", "label_he": "בשר, דגים, חלב או ביצים", "next": "final_shehakol_other" },
+        { "label": "A mixture of multiple food types", "label_he": "תערובת של כמה סוגי מאכל", "next": "mixed_start" },
+        { "label": "Food that's spoiled, stale, or gone downhill", "label_he": "אוכל שהתקלקל, התיישן, או ירד מאיכותו", "next": "spoiled_food_check" }
+      ],
+      "sources": []
+    },
+
+    "cat_other_drinks": {
+      "id": "cat_other_drinks",
+      "is_final": false,
+      "placeholder": false,
+      "question": "What are you drinking?",
+      "question_he": "מה אתה שותה?",
+      "options": [
+        { "label": "Plain water", "label_he": "מים פשוטים", "next": "water_thirst_check" },
+        { "label": "A flavored drink (soda, coffee, tea, juice, etc.)", "label_he": "משקה בטעם (סודה, קפה, תה, מיץ, וכו')", "next": "final_shehakol_drink" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:13",
+          "note": "Plain water only gives a person enjoyment when they're thirsty — so it's the one beverage where the blessing depends on why you're drinking it. Other beverages give enjoyment through their flavor regardless of thirst, so they always get a blessing.",
+          "link": ""
+        }
+      ]
+    },
+
+    "water_thirst_check": {
+      "id": "water_thirst_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Are you drinking because you're thirsty, or just to wash something down (like a pill, or food stuck in your throat)?",
+      "question_he": "האם אתה שותה כי אתה צמא, או רק כדי להעביר משהו (כמו כדור, או אוכל שנתקע בגרון)?",
+      "options": [
+        { "label": "I'm thirsty", "label_he": "אני צמא", "next": "final_shehakol_drink" },
+        { "label": "Just washing something down, not thirsty", "label_he": "רק כדי להעביר משהו, לא צמא", "next": "final_no_bracha_water" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:13",
+          "note": "No blessing — before or after — is said over water drunk only to swallow a pill or dislodge food, since there's no enjoyment in it; the person isn't drinking for the water itself.",
+          "link": ""
+        }
+      ]
+    },
+
+    "spoiled_food_check": {
+      "id": "spoiled_food_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Is it still edible at all, even in a pinch — or is it completely inedible now?",
+      "question_he": "האם זה עדיין ראוי לאכילה ולו בדוחק — או שזה כבר לגמרי לא ראוי לאכילה?",
+      "options": [
+        { "label": "Still edible, even if it's gone downhill", "label_he": "עדיין ראוי לאכילה, גם אם ירד באיכותו", "next": "final_shehakol_spoiled" },
+        { "label": "Completely inedible, even in a pinch", "label_he": "לגמרי לא ראוי לאכילה, אפילו בדוחק", "next": "final_no_bracha" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:2",
+          "note": "Whenever food's quality has deteriorated (its examples: bread gone a bit moldy, a cooked dish whose look and quality declined), its blessing downgrades from whatever specific bracha it would normally get to the generic Shehakol. If it has spoiled entirely — not fit to eat even under pressing circumstances — no blessing at all is said, the same as fully moldy bread.",
+          "link": ""
+        }
+      ]
+    },
+
+    "cat_bread": {
+      "id": "cat_bread",
+      "is_final": false,
+      "placeholder": true,
+      "question": "Is this a standard bread-status item — a loaf, roll, bagel, or pita, of the kind normally eaten as the staple of a meal?",
+      "question_he": "האם זהו פת גמורה - כיכר, לחמנייה, בייגל או פיתה, מהסוג הנאכל כקבע לסעודה?",
+      "options": [
+        { "label": "Yes, it's a standard bread/meal staple", "label_he": "כן, זהו פת רגילה", "next": "bread_meal_context" },
+        { "label": "No, it's more like a sweet pastry, cracker, or filled/glazed baked good", "label_he": "לא, זה יותר דומה למאפה מתוק או מצופה", "next": "cat_mezonot" }
+      ],
+      "sources": [
+        {
+          "citation": "TODO — siman 208 (pas / pas haba'ah bekisanin) [PLACEHOLDER]",
+          "note": "TODO: siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need to locate the Alter Rebbe's own Seder Birkas HaNehenin (or Luach Birkas HaNehenin) for his parallel ruling on bread vs. mezonot before this branch can be sourced from the same tradition.",
+          "link": ""
+        }
+      ]
+    },
+
+    "bread_meal_context": {
+      "id": "bread_meal_context",
+      "is_final": false,
+      "placeholder": true,
+      "question": "Are you eating it as, or as part of, a meal (roughly the amount of bread one would eat at a meal)?",
+      "question_he": "האם אתה אוכל זאת כסעודה, או כחלק מסעודה?",
+      "options": [
+        { "label": "Yes, this is a meal", "label_he": "כן, זוהי סעודה", "next": "final_hamotzi" },
+        { "label": "No, just a small snack amount", "label_he": "לא, רק כמות חטיפית קטנה", "next": "cat_mezonot" }
+      ],
+      "sources": [
+        {
+          "citation": "TODO — siman 208 (kevius se'udah) [PLACEHOLDER]",
+          "note": "TODO: same gap as cat_bread — needs Seder Birkas HaNehenin / Luach Birkas HaNehenin instead of the missing siman 208.",
+          "link": ""
+        }
+      ]
+    },
+
+    "cat_mezonot": {
+      "id": "cat_mezonot",
+      "is_final": false,
+      "placeholder": true,
+      "question": "Is this made primarily from one of the five grains (wheat, barley, oats, spelt, or rye)?",
+      "question_he": "האם זה עשוי בעיקרו מאחד מחמשת מיני דגן (חיטה, שעורה, שיבולת שועל, כוסמת, שיפון)?",
+      "options": [
+        { "label": "Yes", "label_he": "כן", "next": "final_mezonot" },
+        { "label": "No, it's not a grain product", "label_he": "לא, זה לא מוצר דגנים", "next": "mixed_start" }
+      ],
+      "sources": [
+        {
+          "citation": "TODO — siman 208 (five grains / mezonot definition) [PLACEHOLDER]",
+          "note": "TODO: same gap as cat_bread — needs Seder Birkas HaNehenin / Luach Birkas HaNehenin instead of the missing siman 208.",
+          "link": ""
+        }
+      ]
+    },
+
+    "cat_tree_fruit": {
+      "id": "cat_tree_fruit",
+      "is_final": false,
+      "placeholder": false,
+      "question": "What are you actually having?",
+      "question_he": "מה בדיוק אתה אוכל?",
+      "options": [
+        { "label": "The fruit itself", "label_he": "הפרי עצמו", "next": "tree_fruit_ripeness" },
+        { "label": "Juice from the fruit", "label_he": "מיץ מהפרי", "next": "tree_fruit_juice_type" },
+        { "label": "Water it was cooked or soaked in", "label_he": "מים שבישלו או השרו בהם את הפרי", "next": "final_shehakol_cooking_water" },
+        { "label": "A leaf, stem, peel, or pit — not the fruit itself", "label_he": "עלה, גבעול, קליפה, או גרעין — לא הפרי עצמו", "next": "tree_fruit_ancillary_intent" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:1",
+          "note": "Establishes that the bracha for fruit that grows on trees is Ha'etz, a distinct bracha from Ha'adama, precisely because of the fruit's own body/substance — which is why juice, cooking-water, and non-fruit parts of the tree are each analyzed separately below.",
+          "link": ""
+        }
+      ]
+    },
+
+    "tree_fruit_ripeness": {
+      "id": "tree_fruit_ripeness",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Is the fruit ripe?",
+      "question_he": "האם הפרי בשל?",
+      "options": [
+        { "label": "Yes, ripe", "label_he": "כן, בשל", "next": "final_haetz" },
+        { "label": "No, it's unripe or small", "label_he": "לא, הוא לא בשל או קטן", "next": "tree_fruit_edible_check" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:1, 202:4",
+          "note": "The baseline rule (202:1) applies straightforwardly to ripe fruit; 202:4 addresses fruit picked before it has finished ripening.",
+          "link": ""
+        }
+      ]
+    },
+
+    "tree_fruit_edible_check": {
+      "id": "tree_fruit_edible_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Can you eat it at all right now?",
+      "question_he": "האם ניתן לאכול אותו עכשיו?",
+      "options": [
+        { "label": "Yes, it's edible", "label_he": "כן, ניתן לאכול אותו", "next": "final_haetz_unripe" },
+        { "label": "No, it's inedible (too bitter, sour, or hard)", "label_he": "לא, אי אפשר לאכול אותו (מר, חמוץ, או קשה מדי)", "next": "tree_fruit_sweetened_check" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:4",
+          "note": "As long as fruit that has emerged is not so bitter/sour that it's unfit to eat even under pressing circumstances, it already has the halachic status of 'fruit' and gets Ha'etz, even if very small.",
+          "link": ""
+        }
+      ]
+    },
+
+    "tree_fruit_sweetened_check": {
+      "id": "tree_fruit_sweetened_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Was it sweetened or cooked to make it edible?",
+      "question_he": "האם הוא הומתק או בושל כדי להפוך אותו לאכיל?",
+      "options": [
+        { "label": "Yes", "label_he": "כן", "next": "final_shehakol_sweetened_fruit" },
+        { "label": "No, still inedible", "label_he": "לא, עדיין לא אכיל", "next": "final_no_bracha" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:4",
+          "note": "Fruit inedible even under pressing circumstances gets no bracha at all when eaten as-is; if it is later sweetened by fire or another means, since it was never fit to eat without that intervention, it is not treated as returning to full fruit status — the bracha is Shehakol, not Ha'etz.",
+          "link": ""
+        }
+      ]
+    },
+
+    "tree_fruit_juice_type": {
+      "id": "tree_fruit_juice_type",
+      "is_final": false,
+      "placeholder": false,
+      "question": "What kind of juice is it?",
+      "question_he": "איזה סוג מיץ זה?",
+      "options": [
+        { "label": "Wine or grape juice", "label_he": "יין או מיץ ענבים", "next": "final_hagafen" },
+        { "label": "Olive oil", "label_he": "שמן זית", "next": "final_oil_complex" },
+        { "label": "Any other fruit juice", "label_he": "כל מיץ פרי אחר", "next": "final_shehakol_drink" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
+          "note": "Squeezed fruit juice is generally not considered the body of the fruit and gets Shehakol — even juice that oozes out on its own, like date-honey. Grapes and olives are the sole exceptions: what emerges from them is legally 'the fruit itself,' since pressing them to produce wine and oil is the primary reason those trees are planted. Wine is nonetheless removed from Ha'etz into its own bracha (Hagafen) because of its importance; oil, though logically warranting Ha'etz, is not given a blessing at all when drunk plain (since it is harmful and not enjoyed that way) — only when mixed with another beverage for genuine enjoyment.",
+          "link": ""
+        }
+      ]
+    },
+
+    "tree_fruit_ancillary_intent": {
+      "id": "tree_fruit_ancillary_intent",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Do people normally eat this part too, not just the fruit?",
+      "question_he": "האם רגילים לאכול גם חלק זה, ולא רק את הפרי?",
+      "options": [
+        { "label": "Yes (like caper leaves)", "label_he": "כן (כמו עלי צלף)", "next": "final_haadama_ancillary" },
+        { "label": "No (like a palm tree's inner core)", "label_he": "לא (כמו לב הדקל)", "next": "final_shehakol_ancillary" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:2",
+          "note": "Any growth on a tree that is not the primary fruit is not important enough for Ha'etz. It gets Ha'adama if the tree is planted with the intent that this growth be eaten too (its example: caper leaves and shoots); otherwise it is not tied to the purpose of the planting at all and gets Shehakol (its example: the date palm's edible heart/crown, and vine twigs).",
+          "link": ""
+        }
+      ]
+    },
+
+    "cat_ground_produce": {
+      "id": "cat_ground_produce",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Does it grow on a plant that lives for years, or does it grow back fresh from the ground every year — even if it looks tree-like (like a banana or pineapple plant)?",
+      "question_he": "האם זה גדל על צמח שחי שנים רבות, או שזה צומח מחדש מהאדמה בכל שנה — גם אם זה נראה כמו עץ (כמו בננה או אננס)?",
+      "options": [
+        { "label": "Lives for years, like a tree", "label_he": "חי שנים רבות, כמו עץ", "next": "cat_tree_fruit" },
+        { "label": "Grows back fresh every year, or it's a regular vegetable", "label_he": "צומח מחדש בכל שנה, או שזה ירק רגיל", "next": "ground_produce_type" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 203:1",
+          "note": "Defines the test for tree-fruit vs. ground-produce: if the branch a fruit grew on survives the winter and bears fruit again the next year, it's tree fruit (Ha'etz). If the plant dies back entirely and regrows fresh from the root each year, its produce is Ha'adama — even if it looks tree-like. (Later authorities apply this to explain why bananas and pineapples, for example, get Ha'adama.)",
+          "link": ""
+        }
+      ]
+    },
+
+    "ground_produce_type": {
+      "id": "ground_produce_type",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Is it a root or a spice — something that grows underground, or is mainly used as a seasoning?",
+      "question_he": "האם זה שורש או תבלין — משהו שגדל מתחת לאדמה, או משמש בעיקר כתבלין?",
+      "options": [
+        { "label": "No, it's a regular vegetable, leaf, or produce", "label_he": "לא, זהו ירק רגיל, עלה, או תוצרת", "next": "veggie_eaten_how" },
+        { "label": "Yes, a root, spice, or seasoning", "label_he": "כן, שורש, תבלין, או תיבול", "next": "ground_produce_spice_check" }
+      ],
+      "sources": []
+    },
+
+    "veggie_eaten_how": {
+      "id": "veggie_eaten_how",
+      "is_final": false,
+      "placeholder": false,
+      "question": "How are you having it?",
+      "question_he": "איך אתה אוכל אותו?",
+      "options": [
+        { "label": "Raw", "label_he": "חי", "next": "veggie_raw_common_check" },
+        { "label": "Cooked or pickled", "label_he": "מבושל או כבוש", "next": "final_haadama" },
+        { "label": "Juice squeezed from it", "label_he": "מיץ שנסחט ממנו", "next": "final_shehakol_drink" },
+        { "label": "Water it was cooked in", "label_he": "מים שבישלו אותו בהם", "next": "final_haadama_veggie_water" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:1",
+          "note": "The blessing Ha'adama is recited over vegetables whether eaten raw or cooked. This also applies to kitniyos suitable either way. Even vegetables most people only eat together with bread (its example: onions), still get Ha'adama when eaten alone.",
+          "link": ""
+        }
+      ]
+    },
+
+    "veggie_raw_common_check": {
+      "id": "veggie_raw_common_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Do people commonly eat this particular vegetable raw too — not just cooked?",
+      "question_he": "האם רגילים לאכול ירק זה גם חי — ולא רק מבושל?",
+      "options": [
+        { "label": "Yes", "label_he": "כן", "next": "final_haadama" },
+        { "label": "No — it's normally only eaten cooked or pickled (like cabbage, squash, or a dried field bean)", "label_he": "לא — בדרך כלל נאכל רק מבושל או כבוש (כמו כרוב, דלעת, או קטנית יבשה מהשדה)", "next": "final_shehakol_veggie_raw" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:1",
+          "note": "Even if a vegetable is more palatable cooked, if most people also eat it raw, the blessing Ha'adama is recited on it raw too.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:3-4",
+          "note": "Vegetables people don't normally eat raw at all (its examples: cabbage, squash, spinach) get Shehakol raw and Ha'adama once cooked or pickled. The same applies to dried kitniyos (beans/legumes) grown in a field to be dried and cooked — eating them raw, even fresh, is Shehakol; only kitniyos grown in a garden specifically to be eaten raw (and their pods) get Ha'adama raw.",
+          "link": ""
+        }
+      ]
+    },
+
+    "ground_produce_spice_check": {
+      "id": "ground_produce_spice_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Do people ever eat it on its own — even prepared, like candied ginger, or roasted as a home remedy — or is it only ever used to flavor other food?",
+      "question_he": "האם אי פעם אוכלים אותו לבד — גם אם מוכן, כמו זנגביל מסוכר, או קלוי כתרופה ביתית — או שהוא משמש רק לתיבול מאכל אחר?",
+      "options": [
+        { "label": "Yes, sometimes eaten on its own", "label_he": "כן, לפעמים נאכל לבד", "next": "final_haadama" },
+        { "label": "No, only ever used to flavor other food", "label_he": "לא, משמש רק לתיבול מאכל אחר", "next": "final_shehakol_flavoring" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 203:6",
+          "note": "Spices/roots commonly eaten on their own once prepared (its examples: ginger, peppercorns, cloves) get Ha'adama even when honey or sugar is what made them edible, since the honey/sugar is secondary. Spices people never eat by themselves and use only to season cooked food (its example: saffron) never attain the status of produce at all — even if made edible on its own for a curative purpose, they still get Shehakol, because they weren't grown with the intent of being eaten themselves.",
+          "link": ""
+        }
+      ]
+    },
+
+    "mixed_start": {
+      "id": "mixed_start",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Are these foods truly mixed or combined together (like a stew, trail mix, or a filled pastry) — or are you eating two separate foods side by side (like bread alongside something salty)?",
+      "question_he": "האם המאכלים באמת מעורבים או משולבים יחד (כמו תבשיל, תערובת אגוזים, או בצק ממולא) — או שאתה אוכל שני מאכלים נפרדים זה לצד זה (כמו פת לצד משהו מלוח)?",
+      "options": [
+        { "label": "Mixed or combined together", "label_he": "מעורבים או משולבים יחד", "next": "mixed_grain_check" },
+        { "label": "Separate foods, eaten side by side", "label_he": "מאכלים נפרדים, נאכלים זה לצד זה", "next": "mixed_accompaniment_check" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "The primary-covers-secondary principle applies whether the two foods are physically mixed together, prepared with the intent to be eaten together (like a dough filled with fruit), or simply eaten side by side where one food is eaten only because of the other.",
+          "link": ""
+        }
+      ]
+    },
+
+    "mixed_grain_check": {
+      "id": "mixed_grain_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Does it contain an actual grain product (bread, pasta, cereal, a pastry crust) that you intend to actually eat — not just a trace of flour used to thicken something?",
+      "question_he": "האם יש בו מוצר דגן ממשי (לחם, פסטה, דגנים, בצק) שאתה מתכוון לאכול בפועל — ולא רק שביב קמח לסמיכות?",
+      "options": [
+        { "label": "Yes, real grain, and I want to eat it", "label_he": "כן, דגן ממשי, ואני רוצה לאכול אותו", "next": "cat_bread" },
+        { "label": "No — no real grain, or it's just a trace/coating", "label_he": "לא — אין דגן ממשי, או שזה רק שכבה דקה", "next": "mixed_dominant_check" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "Whenever the actual substance of a grain product (not just its flavor) is part of a mixture, it's considered primary (ikar) and takes precedence over everything else in the mixture — even if it's only a small amount — as long as you actually intend to eat it and not just use it as a wrapper or thickener that's dissolved into liquid.",
+          "link": ""
+        }
+      ]
+    },
+
+    "mixed_dominant_check": {
+      "id": "mixed_dominant_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Is one part clearly the main reason you're eating this — with everything else there just to accompany, flavor, or improve it — or does one part simply make up most of the mixture?",
+      "question_he": "האם חלק אחד הוא הסיבה העיקרית לאכילה — והשאר רק מלווה, מתבל, או משפר אותו — או שחלק אחד מהווה את רוב התערובת?",
+      "options": [
+        { "label": "Yes, one part is clearly dominant", "label_he": "כן, חלק אחד דומיננטי בבירור", "next": "final_mixed_dominant" },
+        { "label": "No — a few parts feel roughly equally important to me", "label_he": "לא — כמה חלקים חשובים לי באותה מידה בערך", "next": "final_mixed_equal" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "One recites the blessing over the food of primary importance (ikar) and it covers the food of secondary importance (tafel) — both for the blessing before eating and the one after. This applies whether the secondary food is mixed in only to improve/enable the primary food, or the two foods are simply unequal in amount (the larger portion being primary), or they were prepared with intent to be eaten together (e.g. a dough filled with fruit) even if not physically mixed.",
+          "link": ""
+        }
+      ]
+    },
+
+    "mixed_accompaniment_check": {
+      "id": "mixed_accompaniment_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Are you eating the second food only to help you get through the first — like bread to protect your throat from something salty, or to offset a strong drink — and you wouldn't be eating it right now otherwise?",
+      "question_he": "האם אתה אוכל את המאכל השני רק כדי לעזור לך עם הראשון — כמו פת להגן על הגרון ממאכל מלוח, או לרכך משקה חזק — ולא היית אוכל אותו עכשיו בלעדיו?",
+      "options": [
+        { "label": "Yes, purely to help with the first — I don't want it for its own sake", "label_he": "כן, רק כדי לעזור עם הראשון — לא רוצה אותו בפני עצמו", "next": "final_mixed_accompaniment_secondary" },
+        { "label": "No, I also want to eat it for its own sake", "label_he": "לא, אני גם רוצה לאכול אותו בפני עצמו", "next": "final_mixed_accompaniment_own" }
+      ],
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "Even when two foods aren't mixed together at all, if a person is primarily partaking of one and only partakes of the second because of the first — such that he would not partake of the second at all right now if not for the first — the second is considered auxiliary and is covered by the first's blessing. Its example: a person eats bread together with salted fish just so the fish won't harm his throat; the bread becomes secondary to the fish and is covered by the fish's Shehakol. This applies only when the person is not hungry and has no desire at all for the secondary food on its own — if he does want it too, even eaten together with the primary food, it needs its own blessing (Hamotzi, for bread), since food commonly served as part of a meal is always covered by the bread's own blessing regardless.",
+          "link": ""
+        }
+      ]
+    },
+
+    "final_mixed_dominant": {
+      "id": "final_mixed_dominant",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Say the bracha for the dominant part — it covers the rest",
+      "bracha_name_he": "אמור את הברכה על החלק הדומיננטי — הוא פוטר את השאר",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "Find that dominant ingredient's own bracha by walking through this tool again for that specific food (Fruit / Vegetable / etc.) — then say only that one blessing. It covers everything else mixed in or eaten alongside it, even parts that would otherwise need a different bracha of their own.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "The blessing over food of primary importance covers food of secondary importance, both for the blessing before and after eating.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_mixed_equal": {
+      "id": "final_mixed_equal",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Say a separate bracha for each different type",
+      "bracha_name_he": "אמור ברכה נפרדת לכל סוג שונה",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "When no single part is really dominant, the general approach is to say the right bracha for each different type of food separately, walking through this tool for each one. (There's normally a preferred order for which bracha to say first when several apply — that source, siman 211, isn't available in this tool yet.)",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212, translator's note 39",
+          "note": "Example given: a fruit salad made of some fruits needing Ha'etz and others needing Ha'adama, with no single fruit forming the majority — both blessings are said, each over a piece of the relevant fruit. The rule governing which blessing takes precedence when several apply lives in siman 211, which is not extant in the Alter Rebbe's Shulchan Aruch.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_mixed_accompaniment_secondary": {
+      "id": "final_mixed_accompaniment_secondary",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "No separate bracha needed — the first food's blessing covers it",
+      "bracha_name_he": "אין צורך בברכה נפרדת — ברכת המאכל הראשון פוטרת אותו",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "Since you wouldn't be eating this at all right now if not for the other food, it's \"secondary\" — you skip its own blessing, and the primary food's blessing already covers it. This holds even if the secondary food would normally need a more specific bracha of its own, like bread's Hamotzi — as long as you genuinely have no appetite for it on its own.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "Its example: eating bread together with salted fish purely so the fish won't harm the throat — the bread is secondary to the fish and covered by the fish's Shehakol, even though bread is normally the most prestigious food and would otherwise need its own Hamotzi.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_mixed_accompaniment_own": {
+      "id": "final_mixed_accompaniment_own",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Say its own separate bracha",
+      "bracha_name_he": "אמור עליו ברכה נפרדת משלו",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "Since you want to eat it for its own sake too — not only to help you get through the other food — it needs its own bracha, even though you're eating the two together. Find its bracha by walking through this tool for that specific food.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 212:1",
+          "note": "If a person also desires to partake of the (in the source's example) bread, even eating it together with the salted food, it is not secondary to the salted food, even if he desires the salted food more. He must recite the blessing appropriate to the food he also wants for itself.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_hamotzi": {
+      "id": "final_hamotzi",
+      "is_final": true,
+      "placeholder": true,
+      "bracha_name": "Hamotzi (Borei Minei Mezonot's bread counterpart — the blessing over bread)",
+      "bracha_name_he": "המוציא לחם מן הארץ",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who brings forth bread from the earth. [PLACEHOLDER — confirm exact nusach against your source]",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ",
+      "explanation": "EXAMPLE CONTENT. Bread eaten as/with a meal takes the bracha of Hamotzi, which — per the halachic principle of 'ikar v'tafel' — covers other foods eaten as part of that meal.",
+      "sources": [
+        {
+          "citation": "TODO — siman 167ff (Hamotzi) [PLACEHOLDER]",
+          "note": "TODO: siman 208, which has the actual pas-vs-mezonot distinction (kevius se'udah), does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need the Alter Rebbe's Seder Birkas HaNehenin / Luach Birkas HaNehenin for his parallel ruling before this can be properly sourced.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Birkat Hamazon (Grace After Meals)",
+        "name_he": "ברכת המזון",
+        "text_en": "[PLACEHOLDER — full Birkat Hamazon text/summary and the shiur/conditions for its obligation to be added]",
+        "text_he": "[PLACEHOLDER]",
+        "sources": [
+          { "citation": "TODO — siman 184ff (Birkat Hamazon) [PLACEHOLDER]", "note": "TODO: the shiur/conditions for the obligation to say Birkat Hamazon are discussed around siman 184 and 208 in the standard numbering; siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav (confirmed by siman 207:2's footnotes — its subject matter is instead in the Alter Rebbe's own Seder Birkas HaNehenin, ch. 1). Needs that source before this can be filled in.", "link": "" }
+        ]
+      }
+    },
+
+    "final_mezonot": {
+      "id": "final_mezonot",
+      "is_final": true,
+      "placeholder": true,
+      "bracha_name": "Borei Minei Mezonot",
+      "bracha_name_he": "בורא מיני מזונות",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates various kinds of sustenance. [PLACEHOLDER — confirm exact nusach against your source]",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא מִינֵי מְזוֹנוֹת",
+      "explanation": "EXAMPLE CONTENT. Grain-based foods (of the five grains) that are not eaten in the manner/quantity of a bread-meal take the bracha of Mezonot rather than Hamotzi.",
+      "sources": [
+        {
+          "citation": "TODO — siman 208 (Mezonot) [PLACEHOLDER]",
+          "note": "TODO: same gap — siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need the Seder Birkas HaNehenin / Luach Birkas HaNehenin instead.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Al Hamichyah (Me'ein Shalosh)",
+        "name_he": "על המחיה",
+        "text_en": "[PLACEHOLDER — full text and the k'zayit-within-k'dei-achilat-pras condition to be added]",
+        "text_he": "[PLACEHOLDER]",
+        "sources": [
+          { "citation": "TODO — siman 208-209 (Al Hamichyah) [PLACEHOLDER]", "note": "TODO: confirmed by siman 207:1 — mezonot from the five grains is explicitly excluded from the general Borei Nefashot rule and instead gets \"the one blessing that encapsulates three\" (Al Hamichyah). That text lives in siman 208-209, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.", "link": "" }
+        ]
+      }
+    },
+
+    "final_haetz": {
+      "id": "final_haetz",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Ha'etz",
+      "bracha_name_he": "בורא פרי העץ",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who created the fruit of the tree.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הָעֵץ",
+      "explanation": "Fruit that grows on trees gets its own blessing, Ha'etz — that's the standard bracha for any tree fruit.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:1",
+          "note": "The opening ruling of the chapter: the bracha for all fruit that grows on trees (whether one of the seven species Eretz Yisrael is praised for, or any other species) is Ha'etz. Although the fruit is ultimately nourished from the earth, the Sages gave tree fruit its own distinct bracha because of its importance.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot — unless this fruit is one of the five fruits among the shivat haminim (grapes, figs, pomegranates, olives, dates), which get a different after-blessing instead",
+        "name_he": "בורא נפשות — אלא אם כן זהו אחד מחמשת הפירות משבעת המינים (ענבים, תאנים, רימונים, זיתים, תמרים), שיש להם ברכה אחרונה אחרת",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is the after-blessing for tree fruit, \"with the exception of those from the five species\" — grapes, figs, pomegranates, olives, and dates, the five fruits among the shivat haminim (the seven species Eretz Yisrael is praised for). Those five instead get \"the one blessing that encapsulates three\" (Al Ha'etz / Me'ein Shalosh) — that text lives in siman 208, which is not extant in the Alter Rebbe's Shulchan Aruch, so it isn't sourced in this app yet. Applies once at least a k'zayit (~28.8cc/1 fl. oz.) has been eaten.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_haetz_unripe": {
+      "id": "final_haetz_unripe",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Ha'etz",
+      "bracha_name_he": "בורא פרי העץ",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who created the fruit of the tree.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הָעֵץ",
+      "explanation": "Even unripe fruit still counts as fruit, as long as you can eat it — so it still gets Ha'etz, just like ripe fruit.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:4",
+          "note": "As soon as a tree produces fruit, even very small and not yet ripe, it already has the status of \"fruit\" and takes Ha'etz — as long as it isn't so bitter or sour that it's unfit to eat even in a pinch.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:6",
+          "note": "This leniency is limited to fruit still developing on the tree when picked — not to withered/scorched fruit, or fruit whose season passed without ripening, which instead gets Shehakol.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot — unless this fruit is one of the five fruits among the shivat haminim (grapes, figs, pomegranates, olives, dates), which get a different after-blessing instead",
+        "name_he": "בורא נפשות — אלא אם כן זהו אחד מחמשת הפירות משבעת המינים (ענבים, תאנים, רימונים, זיתים, תמרים), שיש להם ברכה אחרונה אחרת",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is the after-blessing for tree fruit, \"with the exception of those from the five species\" — grapes, figs, pomegranates, olives, and dates, the five fruits among the shivat haminim (the seven species Eretz Yisrael is praised for). Those five instead get \"the one blessing that encapsulates three\" (Al Ha'etz / Me'ein Shalosh) — that text lives in siman 208, which is not extant in the Alter Rebbe's Shulchan Aruch, so it isn't sourced in this app yet. Applies once at least a k'zayit (~28.8cc/1 fl. oz.) has been eaten.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_sweetened_fruit": {
+      "id": "final_shehakol_sweetened_fruit",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "This fruit wasn't edible at all on its own — it only became edible once it was sweetened or cooked. Since it never counted as real fruit to begin with, it gets the everyday blessing, Shehakol, instead of Ha'etz.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:4",
+          "note": "Fruit inedible even under pressing circumstances is never considered halachic \"produce\" at all — it's treated as mere wood. Even after it's later sweetened by fire, honey, or another means and becomes edible, it doesn't regain Ha'etz status, because it was never fit to eat without that intervention.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_no_bracha": {
+      "id": "final_no_bracha",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "No blessing is recited",
+      "bracha_name_he": "אין מברכים כלל",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "This isn't edible at all right now, and hasn't been fixed up to become edible. Since there's nothing to actually enjoy eating, no blessing is said.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:4",
+          "note": "On fruit specifically: \"Provided it is not so bitter or sour that it is unfit to be eaten, even in a pressing situation. In the latter instance, no blessing should be recited over it at all.\"",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:2",
+          "note": "The general version of the same rule for any food: if it has spoiled entirely — not fit to eat even under pressing circumstances — no blessing at all is said, e.g. bread that has gone fully moldy.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_no_bracha_water": {
+      "id": "final_no_bracha_water",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "No blessing is recited",
+      "bracha_name_he": "אין מברכים כלל",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "Plain water only gives real enjoyment when you're actually thirsty. If you're just using it to wash down a pill or dislodge food, there's no enjoyment in the water itself — so no blessing is said, before or after.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:13",
+          "note": "\"The blessing Shehakol nih'yah bidvaro should not be recited before drinking water, nor the blessing Borei nefashos afterwards, unless one drinks because he is thirsty. If, however, one drinks to swallow a cheekful [of food] that is causing him to choke, he should not recite a blessing, neither beforehand nor afterwards.\" (Other beverages always get a blessing regardless of thirst, since their flavor itself is enjoyable.)",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_shehakol_spoiled": {
+      "id": "final_shehakol_spoiled",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "Once food's quality has gone downhill, it drops out of whatever specific blessing it would normally get and falls back to the everyday catch-all blessing, Shehakol.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:2",
+          "note": "\"Whenever the quality of a food has deteriorated, e.g., bread became somewhat moldy or the appearance of food changed and deteriorated slightly, its blessing is downgraded [from] the specific blessing designated for it. [Instead,] the general blessing that includes all foods — Shehakol nih'yah bidvaro — is recited over it.\"",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_cooking_water": {
+      "id": "final_shehakol_cooking_water",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "Even though the water picked up the fruit's flavor, the water itself isn't the fruit — so drinking it on its own gets the everyday blessing, Shehakol.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:11",
+          "note": "Water in which fruit (even olives or grapes) was cooked or steeped, and then drunk on its own, takes Shehakol — because the water, not the fruit, is the primary substance. Vegetable broth is treated differently (Ha'adama), since it's commonly what vegetables are planted and eaten for — see siman 205.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_oil_complex": {
+      "id": "final_oil_complex",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "It depends — see explanation",
+      "bracha_name_he": "תלוי בנסיבות — ראה הסבר",
+      "bracha_text_en": null,
+      "bracha_text_he": null,
+      "explanation": "Plain oil isn't pleasant to drink, so by itself it gets no blessing at all. Mixed into a drink so you can enjoy it, the blessing depends on why you're drinking it: mainly for the oil itself (like a home remedy) → say Ha'etz. Mainly for the other drink, and the oil's just along for the ride (e.g. you're just thirsty) → say that drink's own blessing instead.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
+          "note": "Olives are planted specifically to produce oil, so oil is legally \"the fruit itself\" and in principle deserves Ha'etz — but plain oil is harmful and gives no enjoyment, so no blessing is said over it by itself. Once mixed with another beverage for genuine enjoyment, the bracha follows whichever element (oil or the other beverage) is the primary reason for drinking — full ikar/tafel analysis of intent and proportion is in the source.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": null
+    },
+
+    "final_haadama_ancillary": {
+      "id": "final_haadama_ancillary",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Ha'adama",
+      "bracha_name_he": "בורא פרי האדמה",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who created the fruit of the ground.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הָאֲדָמָה",
+      "explanation": "This isn't the tree's main fruit, but it's still something people normally eat — so it counts as regular produce and gets Ha'adama.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:2",
+          "note": "A growth on a tree that isn't the primary fruit isn't important enough for Ha'etz — but if the tree is planted with the intent that this part be eaten too (the source's example: a caper bush's leaves and shoots, eaten alongside its berries), it still counts as produce and takes Ha'adama.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_ancillary": {
+      "id": "final_shehakol_ancillary",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "This isn't the fruit, and it's not something people normally eat either — so it just gets the everyday blessing, Shehakol.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:2",
+          "note": "A growth that is neither the primary fruit nor something the tree was planted with the intent to have eaten (the source's examples: a date palm's edible heart/crown, and small vine twigs — eating them actually stunts the tree's growth) has no tie to the purpose of the planting, and takes the generic Shehakol.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_haadama": {
+      "id": "final_haadama",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Ha'adama",
+      "bracha_name_he": "בורא פרי האדמה",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who created the fruit of the ground.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הָאֲדָמָה",
+      "explanation": "Vegetables, roots, and other produce that grows fresh from the ground each year get this everyday blessing.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 203:1",
+          "note": "States the base rule: the blessing for \"fruit of the earth\" is Ha'adama, given to produce whose plant doesn't survive winter as a lasting branch (see the tree-vs-ground test in the previous question).",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 203:4",
+          "note": "Roots that are eaten (its examples: fresh ginger, licorice root) get Ha'adama rather than Ha'etz, since a root growing underground is not a tree's primary fruit.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:1",
+          "note": "Vegetables and kitniyos suitable to eat either raw or cooked get Ha'adama in either state. Cooked or pickled vegetables in general get Ha'adama, including ones (like onion or garlic) not normally eaten alone.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_veggie_raw": {
+      "id": "final_shehakol_veggie_raw",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "This vegetable isn't normally eaten raw, so eating it raw isn't really \"the way it's meant to be eaten\" — it gets the everyday blessing instead. (Cooked or pickled, it goes back to Ha'adama.)",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:3",
+          "note": "Vegetables people don't normally eat raw, even with bread (its examples: cabbage, squash, spinach), get Shehakol raw and Ha'adama once cooked or pickled — including turnips and carrots, which get Ha'adama when cooked even if cooked without meat, since cooking with meat for flavor is simply their normal preparation.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:4",
+          "note": "Dried kitniyos (beans/legumes) eaten raw get Shehakol, since that's not their normal use — except garden beans grown specifically to be eaten raw, which get Ha'adama raw (including their pods). Kitniyos grown in a field to be dried and cooked stay Shehakol raw even while still fresh/moist.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205, footnote 8",
+          "note": "This category can shift with common practice: the Rebbe (Rabbi Menachem M. Schneerson), citing the Alter Rebbe's own Seder Birkas HaNehenin, notes the rule isn't fixed — it follows how people actually eat the vegetable at the time. Raw carrots, for example, are commonly eaten today, so they now get Ha'adama raw as well; later authorities (Piskei Teshuvos) extend this to raw cabbage too.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_haadama_veggie_water": {
+      "id": "final_haadama_veggie_water",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Ha'adama",
+      "bracha_name_he": "בורא פרי האדמה",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who created the fruit of the ground.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הָאֲדָמָה",
+      "explanation": "Unlike fruit-cooking water, water a vegetable was cooked in is treated the same as the vegetable itself — because people commonly plan to eat the broth along with (or instead of) the vegetable, so it never really leaves the category of food.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:5",
+          "note": "\"One should... recite the blessing Borei pri haadamah on the water in which [vegetables] are cooked\" — in contrast to fruit-cooking water, which gets Shehakol (siman 202:11), because vegetables are typically planted with the intent that their broth be eaten too.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_flavoring": {
+      "id": "final_shehakol_flavoring",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "Some spices are never eaten as food on their own — only used to flavor other dishes. Since they were never grown to be eaten by themselves, they don't count as real produce, so they get the everyday blessing instead.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 203:6",
+          "note": "Spices/herbs people ordinarily don't eat and use only to season cooked food (its example: saffron) never attain the status of produce — even if made edible on its own for a curative purpose (e.g. roasted as a home remedy), the bracha stays Shehakol, because they weren't grown with the intent of being eaten themselves.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_hagafen": {
+      "id": "final_hagafen",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Pri Hagafen",
+      "bracha_name_he": "בורא פרי הגפן",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates the fruit of the vine.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָּפֶן",
+      "explanation": "Wine is important enough that it gets its own special blessing, Hagafen, instead of the regular fruit blessing. This still counts as wine even if it's been boiled, gone a bit sour (as long as people still call it wine), or has honey/spices mixed in. It stops counting as wine — dropping to Shehakol — if it's watered down enough that it's no longer recognizable or drunk as wine (a rough guide: about 1 part wine to 6 parts water), or if another beverage was mixed in heavily enough to spoil the wine's own taste.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
+          "note": "What emerges from grapes is legally \"the fruit itself\" (unlike ordinary fruit juice), since producing wine is the primary reason grapevines are planted — so on the underlying logic, wine would deserve Ha'etz. But because wine is important — it satiates and gladdens the heart — the Sages gave it its own bracha, Hagafen, instead. Reciting Ha'etz over wine does not fulfill the obligation.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:6-7",
+          "note": "Wine that smells like vinegar but still tastes like wine keeps its Hagafen status (taste, not smell, is what counts); if the taste itself has turned to vinegar, it's Shehakol. Boiled wine is not considered lesser-quality wine — its blessing doesn't change.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:8-9",
+          "note": "Honey or pepper mixed into wine doesn't change its blessing. Another beverage mixed in enough to spoil the wine's own taste drops it to Shehakol. Water mixed in keeps Hagafen as long as the result is still strong enough to be drunk and recognized as wine — roughly, up to about six parts water to one part wine; beyond that it's no longer considered wine at all.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Al Hagefen (Me'ein Shalosh)",
+        "name_he": "על הגפן",
+        "text_en": "[PLACEHOLDER — full text to be added]",
+        "text_he": "[PLACEHOLDER]",
+        "sources": [
+          { "citation": "TODO — siman 208 (Al Hagefen) [PLACEHOLDER]", "note": "TODO: confirmed by siman 207:1 — wine/grapes are among the five fruits of the shivat haminim excluded from the general Borei Nefashot rule, and instead get \"the one blessing that encapsulates three\" (Al Hagefen). That text lives in siman 208, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.", "link": "" }
+        ]
+      }
+    },
+
+    "final_shehakol_drink": {
+      "id": "final_shehakol_drink",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "Fruit or vegetable juice (other than wine and, in its own special case, oil) just gets the everyday blessing, Shehakol — and so does any other flavored drink like soda, coffee, or tea.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
+          "note": "Squeezed fruit juice is not considered the body of the fruit — even if it oozed out on its own — so it takes Shehakol rather than Ha'etz, with wine and (in its own more complex way) olive oil as the exceptions.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 205:5",
+          "note": "Squeezed vegetable juice gets Shehakol just like other produce juice — even though, unlike juice, the water vegetables are cooked in gets Ha'adama.",
+          "link": ""
+        },
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:13",
+          "note": "Unlike plain water, other beverages give real enjoyment through their flavor, so they always get a blessing before and after drinking, regardless of whether the person is thirsty.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    },
+
+    "final_shehakol_other": {
+      "id": "final_shehakol_other",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Shehakol Nihiyeh Bidvaro",
+      "bracha_name_he": "שהכל נהיה בדברו",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, by whose word everything came to be.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם שֶׁהַכֹּל נִהְיָה בִּדְבָרוֹ",
+      "explanation": "Meat, fish, dairy, and eggs don't grow from the ground or a tree at all, so they get the everyday catch-all blessing, Shehakol — the same as mushrooms, since mushrooms feed off moisture in the air rather than truly growing from the earth.",
+      "sources": [
+        {
+          "citation": "Shulchan Aruch HaRav, Orach Chaim 204:1",
+          "note": "\"The blessing Shehakol nih'yah bidvaro is recited on foods that do not grow from the earth\" — its examples: meat of domesticated and wild animals, fowl, fish, milk, cheese, eggs, water, salt, and honey. Mushrooms and truffles are included too: although they grow from the earth, their nurture comes from moisture and the atmosphere rather than the earth itself (and they can grow on wood or utensils), so they're not considered \"fruit of the earth.\"",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Borei Nefashot",
+        "name_he": "בורא נפשות רבות",
+        "text_en": "Blessed are You, Hashem our God, King of the universe, who creates many souls and their needs, for everything You have created to sustain the life of every living thing. Blessed is the Life of all worlds.",
+        "text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶּׁבָּרָאתָ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים",
+        "sources": [
+          {
+            "citation": "Shulchan Aruch HaRav, Orach Chaim 207:1",
+            "note": "Borei Nefashot is recited after: tree fruit (other than the five fruits among the shivat haminim / seven species, which get a different after-blessing — see siman 208, not extant in the Alter Rebbe's Shulchan Aruch), ground produce, leafy vegetables, and any food that doesn't grow from the earth at all (meat, dairy, etc.) — provided at least a k'zayit (an olive's-bulk, roughly 28.8cc/1 fl. oz.) was eaten. Eating several such foods together still only requires one Borei Nefashot, since they all share the same after-blessing. This blessing closes with \"Baruch chei ha'olamim\" rather than repeating Hashem's full name, unlike Birkat Hamazon.",
+            "link": ""
+          }
+        ]
+      }
+    }
+
+  }
+}
