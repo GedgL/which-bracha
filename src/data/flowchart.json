@@ -373,6 +373,11 @@
           "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
           "note": "Squeezed fruit juice is generally not considered the body of the fruit and gets Shehakol — even juice that oozes out on its own, like date-honey. Grapes and olives are the sole exceptions: what emerges from them is legally 'the fruit itself,' since pressing them to produce wine and oil is the primary reason those trees are planted. Wine is nonetheless removed from Ha'etz into its own bracha (Hagafen) because of its importance; oil, though logically warranting Ha'etz, is not given a blessing at all when drunk plain (since it is harmful and not enjoyed that way) — only when mixed with another beverage for genuine enjoyment.",
           "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 7:11",
+          "note": "Confirms the same rule in the Alter Rebbe's later work: squeezed fruit juice takes Shehakol, not the fruit's own blessing — except juice from olives and grapes, which keeps the fruit's status (though wine still gets its own dedicated bracha, Hagafen, due to its importance, and oil is handled separately — see final_oil_complex).",
+          "link": ""
         }
       ]
     },
@@ -796,12 +801,12 @@
       "bracha_achrona": {
         "name": "Al Hamichyah (Me'ein Shalosh)",
         "name_he": "על המחיה",
-        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
-        "text_he": "[PENDING]",
+        "text_en": "[PENDING — Seder Birkas HaNehenin ch. 2 and ch. 7 (both reviewed) reference this blessing by name dozens of times but never quote its text verbatim, unlike short one-line brachot (Shehakol, Ha'etz, Hagafen) which do get quoted in full. This appears to be a consistent pattern in this source: it's a halachic/legal text, not a siddur, so it doesn't reproduce longer prayer texts. Al Hamichyah/Al Hagefen/Al Ha'etz (Me'ein Shalosh) is fixed and universal across all nuscha'ot — the same in every printed siddur/bencher — so the exact text will likely need to come from a siddur/bencher rather than further Birkas HaNehenin chapters.]",
+        "text_he": "[ממתין — הנוסח המדויק לא הופיע בפרקים ב' ו-ז'; ככל הנראה יש להביאו מסידור/בנצ'ר]",
         "sources": [
           {
-            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
-            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "citation": "TODO — exact text not found in Seder Birkas HaNehenin ch. 2 or ch. 7 [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Both Seder Birkas HaNehenin ch. 2 (bread laws) and ch. 7 (other foods/beverages) reference this blessing extensively but never quote its text — likely because it's a longer liturgical text, similar to how Birkat Hamazon's text isn't reproduced either. The exact wording will likely need to come from a siddur/bencher.",
             "link": ""
           }
         ]
@@ -1011,11 +1016,16 @@
       "bracha_name_he": "תלוי בנסיבות — ראה הסבר",
       "bracha_text_en": null,
       "bracha_text_he": null,
-      "explanation": "Plain oil isn't pleasant to drink, so by itself it gets no blessing at all. Mixed into a drink so you can enjoy it, the blessing depends on why you're drinking it: mainly for the oil itself (like a home remedy) → say Ha'etz. Mainly for the other drink, and the oil's just along for the ride (e.g. you're just thirsty) → say that drink's own blessing instead.",
+      "explanation": "Plain oil isn't pleasant to drink, so by itself it gets no blessing at all. Mixed into a drink so you can enjoy it, the blessing depends on why you're drinking it: mainly for the oil itself (like a home remedy for a sore throat) → say Ha'etz, even if the oil is only a small part of the mixture. Mainly for the other drink or food, and the oil's just along for the ride (e.g. oil mixed into beer, or eaten with bread) → say that drink's/food's own blessing instead, which covers the oil.",
       "sources": [
         {
           "citation": "Shulchan Aruch HaRav, Orach Chaim 202:10",
           "note": "Olives are planted specifically to produce oil, so oil is legally \"the fruit itself\" and in principle deserves Ha'etz — but plain oil is harmful and gives no enjoyment, so no blessing is said over it by itself. Once mixed with another beverage for genuine enjoyment, the bracha follows whichever element (oil or the other beverage) is the primary reason for drinking — full ikar/tafel analysis of intent and proportion is in the source.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 7:11",
+          "note": "Gives concrete examples: oil eaten with bread, or mixed into beer (as was common) — the bread/beer is primary, and its own blessing covers the oil. Exception: someone with a sore throat who drinks oil mixed with other beverages specifically to heal it — the oil counts as primary despite being the smaller part, since that's their actual intent, so Ha'etz is said and covers the other beverages.",
           "link": ""
         }
       ],
@@ -1245,17 +1255,22 @@
           "citation": "Shulchan Aruch HaRav, Orach Chaim 204:8-9",
           "note": "Honey or pepper mixed into wine doesn't change its blessing. Another beverage mixed in enough to spoil the wine's own taste drops it to Shehakol. Water mixed in keeps Hagafen as long as the result is still strong enough to be drunk and recognized as wine — roughly, up to about six parts water to one part wine; beyond that it's no longer considered wine at all.",
           "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 7:6",
+          "note": "Confirms and adds detail: wine diluted with water keeps Hagafen as long as it's still strong enough to be recognized and commonly drunk as wine at that dilution — an individual's personal willingness to call heavily-diluted wine \"wine\" doesn't count if most people wouldn't. Once water reaches six times the wine's volume, Hagafen is never said, regardless of strength or custom.",
+          "link": ""
         }
       ],
       "bracha_achrona": {
         "name": "Al Hagefen (Me'ein Shalosh)",
         "name_he": "על הגפן",
-        "text_en": "[PLACEHOLDER — full text to be added]",
-        "text_he": "[PLACEHOLDER]",
+        "text_en": "[PENDING — Seder Birkas HaNehenin ch. 2 and ch. 7 (both reviewed) reference this blessing by name dozens of times but never quote its text verbatim, unlike short one-line brachot (Shehakol, Ha'etz, Hagafen) which do get quoted in full. This appears to be a consistent pattern in this source: it's a halachic/legal text, not a siddur, so it doesn't reproduce longer prayer texts. Al Hamichyah/Al Hagefen/Al Ha'etz (Me'ein Shalosh) is fixed and universal across all nuscha'ot — the same in every printed siddur/bencher — so the exact text will likely need to come from a siddur/bencher rather than further Birkas HaNehenin chapters.]",
+        "text_he": "[ממתין — הנוסח המדויק לא הופיע בפרקים ב' ו-ז'; ככל הנראה יש להביאו מסידור/בנצ'ר]",
         "sources": [
           {
-            "citation": "TODO — siman 208 (Al Hagefen) [PLACEHOLDER]",
-            "note": "TODO: confirmed by siman 207:1 — wine/grapes are among the five fruits of the shivat haminim excluded from the general Borei Nefashot rule, and instead get \"the one blessing that encapsulates three\" (Al Hagefen). That text lives in siman 208, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.",
+            "citation": "TODO — exact text not found in Seder Birkas HaNehenin ch. 2 or ch. 7 [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that wine/grapes (among the shivat haminim) get \"the one blessing that encapsulates three\" (Al Hagefen) instead of Borei Nefashot. Neither reviewed Birkas HaNehenin chapter quotes its text. The exact wording will likely need to come from a siddur/bencher.",
             "link": ""
           }
         ]
@@ -1407,12 +1422,12 @@
       "bracha_achrona": {
         "name": "Al Hamichyah (Me'ein Shalosh)",
         "name_he": "על המחיה",
-        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
-        "text_he": "[PENDING]",
+        "text_en": "[PENDING — Seder Birkas HaNehenin ch. 2 and ch. 7 (both reviewed) reference this blessing by name dozens of times but never quote its text verbatim, unlike short one-line brachot (Shehakol, Ha'etz, Hagafen) which do get quoted in full. This appears to be a consistent pattern in this source: it's a halachic/legal text, not a siddur, so it doesn't reproduce longer prayer texts. Al Hamichyah/Al Hagefen/Al Ha'etz (Me'ein Shalosh) is fixed and universal across all nuscha'ot — the same in every printed siddur/bencher — so the exact text will likely need to come from a siddur/bencher rather than further Birkas HaNehenin chapters.]",
+        "text_he": "[ממתין — הנוסח המדויק לא הופיע בפרקים ב' ו-ז'; ככל הנראה יש להביאו מסידור/בנצ'ר]",
         "sources": [
           {
-            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
-            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "citation": "TODO — exact text not found in Seder Birkas HaNehenin ch. 2 or ch. 7 [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Both Seder Birkas HaNehenin ch. 2 (bread laws) and ch. 7 (other foods/beverages) reference this blessing extensively but never quote its text — likely because it's a longer liturgical text, similar to how Birkat Hamazon's text isn't reproduced either. The exact wording will likely need to come from a siddur/bencher.",
             "link": ""
           }
         ]
@@ -1437,12 +1452,12 @@
       "bracha_achrona": {
         "name": "Al Hamichyah (Me'ein Shalosh)",
         "name_he": "על המחיה",
-        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
-        "text_he": "[PENDING]",
+        "text_en": "[PENDING — Seder Birkas HaNehenin ch. 2 and ch. 7 (both reviewed) reference this blessing by name dozens of times but never quote its text verbatim, unlike short one-line brachot (Shehakol, Ha'etz, Hagafen) which do get quoted in full. This appears to be a consistent pattern in this source: it's a halachic/legal text, not a siddur, so it doesn't reproduce longer prayer texts. Al Hamichyah/Al Hagefen/Al Ha'etz (Me'ein Shalosh) is fixed and universal across all nuscha'ot — the same in every printed siddur/bencher — so the exact text will likely need to come from a siddur/bencher rather than further Birkas HaNehenin chapters.]",
+        "text_he": "[ממתין — הנוסח המדויק לא הופיע בפרקים ב' ו-ז'; ככל הנראה יש להביאו מסידור/בנצ'ר]",
         "sources": [
           {
-            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
-            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "citation": "TODO — exact text not found in Seder Birkas HaNehenin ch. 2 or ch. 7 [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Both Seder Birkas HaNehenin ch. 2 (bread laws) and ch. 7 (other foods/beverages) reference this blessing extensively but never quote its text — likely because it's a longer liturgical text, similar to how Birkat Hamazon's text isn't reproduced either. The exact wording will likely need to come from a siddur/bencher.",
             "link": ""
           }
         ]
