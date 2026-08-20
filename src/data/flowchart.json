@@ -1,11 +1,10 @@
 {
   "_meta": {
     "title": "Which Bracha? — flowchart data",
-    "note": "MIXED CONTENT. Sourced from Rabbi Schneur Zalman of Liadi's Shulchan Aruch HaRav, Orach Chaim (via Chabad.org, Eliyahu Touger/Sholom B. Wineberg translation), at 'core rulings only' depth: siman 202 (cat_tree_fruit branch), siman 203 (cat_ground_produce branch), siman 204 (meat/fish/dairy/eggs default, general food-spoilage downgrade rule, water-only-blessed-when-thirsty rule, extra wine detail folded into final_hagafen), siman 205 (vegetables raw-vs-cooked, veggie juice/cooking-water), and siman 207 (bracha achrona — Borei Nefashot text and when it applies, now filled into every final node's bracha_achrona field where it's the correct after-blessing). Simanim 206, 213, 214, and 215 (interruptions/errors while reciting a blessing, holding food in the right hand, doubt-resolution defaults, equinox/dangerous-water customs, fulfilling another person's obligation by reciting on their behalf, the required 'Baruch...Melech ha'olam' wording formula, and the rules for answering Amen) were all reviewed but are mechanics/procedure of blessing recitation rather than which-bracha-to-say logic, so none were built into new branches — this app is scoped to category determination, not the full liturgical mechanics of brachot. All 10 chapters supplied so far (202-207, 212-215) have now been reviewed at least once. Minor edge-case machloket (unripe almonds, inferior wild berries, capers, sugar cane, doubt cases, curative/forced-eating cases, ikar/tafel honey mixtures, etc.) intentionally omitted for this pass. Explanations are written in plain, layman-friendly language; the fuller technical/halachic reasoning is kept in each source's footnote 'note' field for readers who want to dig deeper. IMPORTANT GAP: the bread-vs-mezonot rules (cat_bread, bread_meal_context, cat_mezonot, final_hamotzi, final_mezonot — normally siman 208 in the standard Shulchan Aruch numbering) CANNOT be sourced from the Shulchan Aruch HaRav, because siman 208 does not survive in the Alter Rebbe's original text (confirmed repeatedly by 'this section is not extant in the Alter Rebbe's Shulchan Aruch' footnotes in chapters 202, 204, and 207 — siman 207:1 explicitly excludes the five grains and the five shivat-haminim fruits from the general Borei Nefashot rule, pointing to the missing 208 for their real after-blessing text: Al Hamichyah for grain, Al Hagefen for wine, Al Ha'etz for the other four). These nodes (final_hamotzi's Birkat Hamazon achrona, final_mezonot's Al Hamichyah achrona, final_hagafen's Al Hagefen achrona, and the whole bread/mezonot bracha-rishona branch) remain PLACEHOLDER CONTENT until the user supplies an alternate source (e.g. the Mechaber's Shulchan Aruch, Mishnah Berurah, or the Alter Rebbe's own supplementary Seder Birkas HaNehenin/Luach Birkas HaNehenin, which the footnotes repeatedly cite as the closest surviving parallel). The mixed-foods branch (mixed_start and descendants) is now sourced from siman 212 (ikar/tafel — primary food's blessing covers secondary food), at core-rulings depth: grain supremacy in a mixture, dominant/majority-component rule, and the accompaniment case (eating one food only to help with another, e.g. bread with salty fish). Nodes carry \"placeholder\": false once genuinely sourced; \"placeholder\": true and the literal string PLACEHOLDER still mark content awaiting real source text. Do not treat placeholder nodes as halachically authoritative. Citations for real Shulchan Aruch HaRav content are precise (siman:seif); \"link\" fields are left empty until a specific chabad.org/Sefaria URL for that siman can be confirmed rather than guessed.",
+    "note": "MIXED CONTENT, two source works. (1) Rabbi Schneur Zalman of Liadi's Shulchan Aruch HaRav, Orach Chaim (via Chabad.org, Eliyahu Touger/Sholom B. Wineberg translation), at 'core rulings only' depth: siman 202 (cat_tree_fruit branch), siman 203 (cat_ground_produce branch), siman 204 (meat/fish/dairy/eggs default, general food-spoilage downgrade rule, water-only-blessed-when-thirsty rule, extra wine detail folded into final_hagafen), siman 205 (vegetables raw-vs-cooked, veggie juice/cooking-water), siman 207 (bracha achrona — Borei Nefashot text and when it applies), and siman 212 (ikar/tafel — mixed foods: grain supremacy, dominant/majority-component rule, accompaniment case). Simanim 206, 213, 214, and 215 (interruptions/errors, holding food in the right hand, doubt-resolution defaults, equinox/dangerous-water customs, fulfilling another's obligation, the 'Baruch...Melech ha'olam' formula, answering Amen) were reviewed but are mechanics/procedure rather than which-bracha-to-say logic, so none were built into branches. Simanim 208-231 do not survive in the Alter Rebbe's original Shulchan Aruch text (confirmed repeatedly by 'not extant' footnotes) — this is why bread/mezonot and the Me'ein Shalosh after-blessings (Al Hamichyah/Al Hagefen/Al Ha'etz) couldn't be sourced from the Shulchan Aruch HaRav alone. (2) The Alter Rebbe's own Seder Birkas HaNehenin (via Chabad.org, same translators) now fills that gap: ch. 2 ('The Detailed Laws Governing the Blessing Over Bread', 15 halachos) is fully built into the bread/mezonot branch (cat_bread, cat_mezonot, bread_meal_context, bread_filling_check, boiled_then_baked_check, final_hamotzi, final_mezonot, final_mezonot_fried, final_mezonot_boiled) — covering plain bread, thin crackers (trisa), enriched/soft dough with its meal-quantity upgrade rule, savory- vs. sweet-filled pastries, fried dough, and boiled/cooked dough (including the boiled-then-baked-restores-Hamotzi rule). Remaining PLACEHOLDER CONTENT: the exact text of Al Hamichyah/Al Hagefen/Al Ha'etz (Me'ein Shalosh) was referenced by name throughout ch. 2 but never quoted verbatim there — expected in ch. 7 ('Details Concerning the Blessings Recited over Other Foods and Beverages'), not yet reviewed. Birkat Hamazon's full liturgical text is intentionally not reproduced (out of scope, like simanim 206/213-215) — only its triggering conditions are sourced. 12 of 14 supplied Seder Birkas HaNehenin files (overview + ch. 1, 3-13) remain unreviewed as of this pass; only ch. 2 has been processed so far. Minor edge-case machloket intentionally omitted throughout, consistent with the rest of this app's scope. Explanations are written in plain, layman-friendly language; fuller technical/halachic reasoning is kept in each source's footnote 'note' field. Nodes carry \"placeholder\": false once genuinely sourced; \"placeholder\": true and the literal string PLACEHOLDER/PENDING still mark content awaiting real source text. Do not treat placeholder content as halachically authoritative. Citations for Shulchan Aruch HaRav content are siman:seif; for Seder Birkas HaNehenin content, chapter:halacha. \"link\" fields are left empty until a specific chabad.org/Sefaria URL can be confirmed rather than guessed.",
     "startNode": "start"
   },
   "nodes": {
-
     "start": {
       "id": "start",
       "is_final": false,
@@ -13,19 +12,54 @@
       "question": "What are you eating or drinking?",
       "question_he": "מה אתה אוכל או שותה?",
       "options": [
-        { "label": "Bread", "label_he": "לחם", "next": "cat_bread" },
-        { "label": "Mezonot / grain product (cake, pastry, pasta, cereal, etc.)", "label_he": "מזונות (עוגה, פשטידה, פסטה, דגנים וכו')", "next": "cat_mezonot" },
-        { "label": "Fruit", "label_he": "פרי", "next": "cat_tree_fruit" },
-        { "label": "Vegetable", "label_he": "ירק", "next": "cat_ground_produce" },
-        { "label": "Wine or grape juice", "label_he": "יין או מיץ ענבים", "next": "final_hagafen" },
-        { "label": "Other drinks (water, soda, coffee, tea, non-grape juice)", "label_he": "משקאות אחרים", "next": "cat_other_drinks" },
-        { "label": "Meat, fish, dairy, or eggs", "label_he": "בשר, דגים, חלב או ביצים", "next": "final_shehakol_other" },
-        { "label": "A mixture of multiple food types", "label_he": "תערובת של כמה סוגי מאכל", "next": "mixed_start" },
-        { "label": "Food that's spoiled, stale, or gone downhill", "label_he": "אוכל שהתקלקל, התיישן, או ירד מאיכותו", "next": "spoiled_food_check" }
+        {
+          "label": "Bread",
+          "label_he": "לחם",
+          "next": "cat_bread"
+        },
+        {
+          "label": "Mezonot / grain product (cake, pastry, pasta, cereal, etc.)",
+          "label_he": "מזונות (עוגה, פשטידה, פסטה, דגנים וכו')",
+          "next": "cat_mezonot"
+        },
+        {
+          "label": "Fruit",
+          "label_he": "פרי",
+          "next": "cat_tree_fruit"
+        },
+        {
+          "label": "Vegetable",
+          "label_he": "ירק",
+          "next": "cat_ground_produce"
+        },
+        {
+          "label": "Wine or grape juice",
+          "label_he": "יין או מיץ ענבים",
+          "next": "final_hagafen"
+        },
+        {
+          "label": "Other drinks (water, soda, coffee, tea, non-grape juice)",
+          "label_he": "משקאות אחרים",
+          "next": "cat_other_drinks"
+        },
+        {
+          "label": "Meat, fish, dairy, or eggs",
+          "label_he": "בשר, דגים, חלב או ביצים",
+          "next": "final_shehakol_other"
+        },
+        {
+          "label": "A mixture of multiple food types",
+          "label_he": "תערובת של כמה סוגי מאכל",
+          "next": "mixed_start"
+        },
+        {
+          "label": "Food that's spoiled, stale, or gone downhill",
+          "label_he": "אוכל שהתקלקל, התיישן, או ירד מאיכותו",
+          "next": "spoiled_food_check"
+        }
       ],
       "sources": []
     },
-
     "cat_other_drinks": {
       "id": "cat_other_drinks",
       "is_final": false,
@@ -33,8 +67,16 @@
       "question": "What are you drinking?",
       "question_he": "מה אתה שותה?",
       "options": [
-        { "label": "Plain water", "label_he": "מים פשוטים", "next": "water_thirst_check" },
-        { "label": "A flavored drink (soda, coffee, tea, juice, etc.)", "label_he": "משקה בטעם (סודה, קפה, תה, מיץ, וכו')", "next": "final_shehakol_drink" }
+        {
+          "label": "Plain water",
+          "label_he": "מים פשוטים",
+          "next": "water_thirst_check"
+        },
+        {
+          "label": "A flavored drink (soda, coffee, tea, juice, etc.)",
+          "label_he": "משקה בטעם (סודה, קפה, תה, מיץ, וכו')",
+          "next": "final_shehakol_drink"
+        }
       ],
       "sources": [
         {
@@ -44,7 +86,6 @@
         }
       ]
     },
-
     "water_thirst_check": {
       "id": "water_thirst_check",
       "is_final": false,
@@ -52,8 +93,16 @@
       "question": "Are you drinking because you're thirsty, or just to wash something down (like a pill, or food stuck in your throat)?",
       "question_he": "האם אתה שותה כי אתה צמא, או רק כדי להעביר משהו (כמו כדור, או אוכל שנתקע בגרון)?",
       "options": [
-        { "label": "I'm thirsty", "label_he": "אני צמא", "next": "final_shehakol_drink" },
-        { "label": "Just washing something down, not thirsty", "label_he": "רק כדי להעביר משהו, לא צמא", "next": "final_no_bracha_water" }
+        {
+          "label": "I'm thirsty",
+          "label_he": "אני צמא",
+          "next": "final_shehakol_drink"
+        },
+        {
+          "label": "Just washing something down, not thirsty",
+          "label_he": "רק כדי להעביר משהו, לא צמא",
+          "next": "final_no_bracha_water"
+        }
       ],
       "sources": [
         {
@@ -63,7 +112,6 @@
         }
       ]
     },
-
     "spoiled_food_check": {
       "id": "spoiled_food_check",
       "is_final": false,
@@ -71,8 +119,16 @@
       "question": "Is it still edible at all, even in a pinch — or is it completely inedible now?",
       "question_he": "האם זה עדיין ראוי לאכילה ולו בדוחק — או שזה כבר לגמרי לא ראוי לאכילה?",
       "options": [
-        { "label": "Still edible, even if it's gone downhill", "label_he": "עדיין ראוי לאכילה, גם אם ירד באיכותו", "next": "final_shehakol_spoiled" },
-        { "label": "Completely inedible, even in a pinch", "label_he": "לגמרי לא ראוי לאכילה, אפילו בדוחק", "next": "final_no_bracha" }
+        {
+          "label": "Still edible, even if it's gone downhill",
+          "label_he": "עדיין ראוי לאכילה, גם אם ירד באיכותו",
+          "next": "final_shehakol_spoiled"
+        },
+        {
+          "label": "Completely inedible, even in a pinch",
+          "label_he": "לגמרי לא ראוי לאכילה, אפילו בדוחק",
+          "next": "final_no_bracha"
+        }
       ],
       "sources": [
         {
@@ -82,64 +138,99 @@
         }
       ]
     },
-
     "cat_bread": {
       "id": "cat_bread",
       "is_final": false,
-      "placeholder": true,
-      "question": "Is this a standard bread-status item — a loaf, roll, bagel, or pita, of the kind normally eaten as the staple of a meal?",
-      "question_he": "האם זהו פת גמורה - כיכר, לחמנייה, בייגל או פיתה, מהסוג הנאכל כקבע לסעודה?",
+      "placeholder": false,
+      "question": "Is this a plain bread-style item — a loaf, roll, bagel, or pita made from just flour and water, kneaded into a firm dough and baked in an oven?",
+      "question_he": "האם זהו פת פשוטה - כיכר, לחמניה, בייגל או פיתה, העשויה מקמח ומים בלבד, שנילושה לבצק מוצק ונאפתה בתנור?",
       "options": [
-        { "label": "Yes, it's a standard bread/meal staple", "label_he": "כן, זהו פת רגילה", "next": "bread_meal_context" },
-        { "label": "No, it's more like a sweet pastry, cracker, or filled/glazed baked good", "label_he": "לא, זה יותר דומה למאפה מתוק או מצופה", "next": "cat_mezonot" }
+        {
+          "label": "Yes, plain flour-and-water bread",
+          "label_he": "כן, פת רגילה מקמח ומים",
+          "next": "final_hamotzi"
+        },
+        {
+          "label": "No — it's enriched, thin, filled, fried, or boiled/cooked",
+          "label_he": "לא - זה מועשר, דק, ממולא, מטוגן, או מבושל",
+          "next": "cat_mezonot"
+        }
       ],
       "sources": [
         {
-          "citation": "TODO — siman 208 (pas / pas haba'ah bekisanin) [PLACEHOLDER]",
-          "note": "TODO: siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need to locate the Alter Rebbe's own Seder Birkas HaNehenin (or Luach Birkas HaNehenin) for his parallel ruling on bread vs. mezonot before this branch can be sourced from the same tradition.",
+          "citation": "Seder Birkas HaNehenin, ch. 2:1",
+          "note": "Plain bread — of the kind people normally base a meal on, made from flour kneaded with water into a firm dough and baked — always takes Hamotzi and triggers Birkat Hamazon once at least a k'zayit (~28.8cc/1 fl. oz.) has been eaten, regardless of whether you're actually full. This differs from breads/baked goods that aren't \"standard\" — those only get Hamotzi if eaten in a meal-sized quantity (see following questions).",
           "link": ""
         }
       ]
     },
-
     "bread_meal_context": {
       "id": "bread_meal_context",
       "is_final": false,
-      "placeholder": true,
-      "question": "Are you eating it as, or as part of, a meal (roughly the amount of bread one would eat at a meal)?",
-      "question_he": "האם אתה אוכל זאת כסעודה, או כחלק מסעודה?",
+      "placeholder": false,
+      "question": "Are you eating enough of it that it's serving as your actual meal — roughly the amount of bread most people would eat at breakfast or dinner (not just a snack or small amount)?",
+      "question_he": "האם אתה אוכל כמות כזו שהיא משמשת כסעודה ממש - בערך הכמות שרוב האנשים אוכלים בארוחת בוקר או ערב (ולא רק חטיף או כמות קטנה)?",
       "options": [
-        { "label": "Yes, this is a meal", "label_he": "כן, זוהי סעודה", "next": "final_hamotzi" },
-        { "label": "No, just a small snack amount", "label_he": "לא, רק כמות חטיפית קטנה", "next": "cat_mezonot" }
+        {
+          "label": "Yes, this is my meal",
+          "label_he": "כן, זוהי הסעודה שלי",
+          "next": "final_hamotzi"
+        },
+        {
+          "label": "No, just a snack/small amount",
+          "label_he": "לא, רק חטיף או כמות קטנה",
+          "next": "final_mezonot"
+        }
       ],
       "sources": [
         {
-          "citation": "TODO — siman 208 (kevius se'udah) [PLACEHOLDER]",
-          "note": "TODO: same gap as cat_bread — needs Seder Birkas HaNehenin / Luach Birkas HaNehenin instead of the missing siman 208.",
+          "citation": "Seder Birkas HaNehenin, ch. 2:2",
+          "note": "There are many opinions on the exact minimum amount. The Alter Rebbe's practical guidance: eating an amount equal to roughly four egg-sized portions or more of these breads, to the point of being satisfied, upgrades the blessing to Hamotzi and Birkat Hamazon (recited over this food alone). Eating less than that, or not being satisfied even after eating a large amount, keeps the blessing at Mezonot / Al Hamichyah.",
           "link": ""
         }
       ]
     },
-
     "cat_mezonot": {
       "id": "cat_mezonot",
       "is_final": false,
-      "placeholder": true,
-      "question": "Is this made primarily from one of the five grains (wheat, barley, oats, spelt, or rye)?",
-      "question_he": "האם זה עשוי בעיקרו מאחד מחמשת מיני דגן (חיטה, שעורה, שיבולת שועל, כוסמת, שיפון)?",
+      "placeholder": false,
+      "question": "What kind of item is it, and how was it made?",
+      "question_he": "מהו סוג הפריט, וכיצד הוא הוכן?",
       "options": [
-        { "label": "Yes", "label_he": "כן", "next": "final_mezonot" },
-        { "label": "No, it's not a grain product", "label_he": "לא, זה לא מוצר דגנים", "next": "mixed_start" }
+        {
+          "label": "A cracker, wafer, thin flatbread, or crispy snack — thin and crisp all the way through, even after baking",
+          "label_he": "קרקר, וופל, פת דקה, או חטיף פריך - דק ופריך לגמרי, גם אחרי האפייה",
+          "next": "final_mezonot"
+        },
+        {
+          "label": "A soft roll, bun, cake, or sweet bread — made with milk, juice, honey, oil, wine, or eggs (not just flour and water), or a soft dough that isn't full firm bread-dough",
+          "label_he": "לחמניה רכה, עוגה, או לחם מתוק - העשוי מחלב, מיץ, דבש, שמן, יין או ביצים (לא רק קמח ומים), או בצק רך שאינו בצק לחם מוצק",
+          "next": "bread_meal_context"
+        },
+        {
+          "label": "A pastry with a filling baked inside it (filled before baking)",
+          "label_he": "מאפה עם מילוי אפוי בתוכו (שממולא לפני האפייה)",
+          "next": "bread_filling_check"
+        },
+        {
+          "label": "Fried in oil (like a donut or fried dough)",
+          "label_he": "מטוגן בשמן (כמו סופגנייה או בצק מטוגן)",
+          "next": "final_mezonot_fried"
+        },
+        {
+          "label": "Boiled or cooked in water/soup/a pot (like a dumpling or kreplach)",
+          "label_he": "מבושל במים/מרק/סיר (כמו כופתה או קרעפלאך)",
+          "next": "boiled_then_baked_check"
+        }
       ],
       "sources": [
         {
-          "citation": "TODO — siman 208 (five grains / mezonot definition) [PLACEHOLDER]",
-          "note": "TODO: same gap as cat_bread — needs Seder Birkas HaNehenin / Luach Birkas HaNehenin instead of the missing siman 208.",
+          "citation": "Seder Birkas HaNehenin, ch. 2:5-6, 9, 11-13",
+          "note": "The Alter Rebbe classifies baked/cooked grain products into these categories. Thin/crispy items (trisa) never upgrade to Hamotzi no matter how much you eat. Soft/enriched breads and fillings can upgrade to Hamotzi if eaten as a full meal-sized portion. Fried and boiled/cooked dough generally stay Mezonot regardless of quantity, with some further distinctions covered in the following questions.",
           "link": ""
         }
       ]
     },
-
     "cat_tree_fruit": {
       "id": "cat_tree_fruit",
       "is_final": false,
@@ -147,10 +238,26 @@
       "question": "What are you actually having?",
       "question_he": "מה בדיוק אתה אוכל?",
       "options": [
-        { "label": "The fruit itself", "label_he": "הפרי עצמו", "next": "tree_fruit_ripeness" },
-        { "label": "Juice from the fruit", "label_he": "מיץ מהפרי", "next": "tree_fruit_juice_type" },
-        { "label": "Water it was cooked or soaked in", "label_he": "מים שבישלו או השרו בהם את הפרי", "next": "final_shehakol_cooking_water" },
-        { "label": "A leaf, stem, peel, or pit — not the fruit itself", "label_he": "עלה, גבעול, קליפה, או גרעין — לא הפרי עצמו", "next": "tree_fruit_ancillary_intent" }
+        {
+          "label": "The fruit itself",
+          "label_he": "הפרי עצמו",
+          "next": "tree_fruit_ripeness"
+        },
+        {
+          "label": "Juice from the fruit",
+          "label_he": "מיץ מהפרי",
+          "next": "tree_fruit_juice_type"
+        },
+        {
+          "label": "Water it was cooked or soaked in",
+          "label_he": "מים שבישלו או השרו בהם את הפרי",
+          "next": "final_shehakol_cooking_water"
+        },
+        {
+          "label": "A leaf, stem, peel, or pit — not the fruit itself",
+          "label_he": "עלה, גבעול, קליפה, או גרעין — לא הפרי עצמו",
+          "next": "tree_fruit_ancillary_intent"
+        }
       ],
       "sources": [
         {
@@ -160,7 +267,6 @@
         }
       ]
     },
-
     "tree_fruit_ripeness": {
       "id": "tree_fruit_ripeness",
       "is_final": false,
@@ -168,8 +274,16 @@
       "question": "Is the fruit ripe?",
       "question_he": "האם הפרי בשל?",
       "options": [
-        { "label": "Yes, ripe", "label_he": "כן, בשל", "next": "final_haetz" },
-        { "label": "No, it's unripe or small", "label_he": "לא, הוא לא בשל או קטן", "next": "tree_fruit_edible_check" }
+        {
+          "label": "Yes, ripe",
+          "label_he": "כן, בשל",
+          "next": "final_haetz"
+        },
+        {
+          "label": "No, it's unripe or small",
+          "label_he": "לא, הוא לא בשל או קטן",
+          "next": "tree_fruit_edible_check"
+        }
       ],
       "sources": [
         {
@@ -179,7 +293,6 @@
         }
       ]
     },
-
     "tree_fruit_edible_check": {
       "id": "tree_fruit_edible_check",
       "is_final": false,
@@ -187,8 +300,16 @@
       "question": "Can you eat it at all right now?",
       "question_he": "האם ניתן לאכול אותו עכשיו?",
       "options": [
-        { "label": "Yes, it's edible", "label_he": "כן, ניתן לאכול אותו", "next": "final_haetz_unripe" },
-        { "label": "No, it's inedible (too bitter, sour, or hard)", "label_he": "לא, אי אפשר לאכול אותו (מר, חמוץ, או קשה מדי)", "next": "tree_fruit_sweetened_check" }
+        {
+          "label": "Yes, it's edible",
+          "label_he": "כן, ניתן לאכול אותו",
+          "next": "final_haetz_unripe"
+        },
+        {
+          "label": "No, it's inedible (too bitter, sour, or hard)",
+          "label_he": "לא, אי אפשר לאכול אותו (מר, חמוץ, או קשה מדי)",
+          "next": "tree_fruit_sweetened_check"
+        }
       ],
       "sources": [
         {
@@ -198,7 +319,6 @@
         }
       ]
     },
-
     "tree_fruit_sweetened_check": {
       "id": "tree_fruit_sweetened_check",
       "is_final": false,
@@ -206,8 +326,16 @@
       "question": "Was it sweetened or cooked to make it edible?",
       "question_he": "האם הוא הומתק או בושל כדי להפוך אותו לאכיל?",
       "options": [
-        { "label": "Yes", "label_he": "כן", "next": "final_shehakol_sweetened_fruit" },
-        { "label": "No, still inedible", "label_he": "לא, עדיין לא אכיל", "next": "final_no_bracha" }
+        {
+          "label": "Yes",
+          "label_he": "כן",
+          "next": "final_shehakol_sweetened_fruit"
+        },
+        {
+          "label": "No, still inedible",
+          "label_he": "לא, עדיין לא אכיל",
+          "next": "final_no_bracha"
+        }
       ],
       "sources": [
         {
@@ -217,7 +345,6 @@
         }
       ]
     },
-
     "tree_fruit_juice_type": {
       "id": "tree_fruit_juice_type",
       "is_final": false,
@@ -225,9 +352,21 @@
       "question": "What kind of juice is it?",
       "question_he": "איזה סוג מיץ זה?",
       "options": [
-        { "label": "Wine or grape juice", "label_he": "יין או מיץ ענבים", "next": "final_hagafen" },
-        { "label": "Olive oil", "label_he": "שמן זית", "next": "final_oil_complex" },
-        { "label": "Any other fruit juice", "label_he": "כל מיץ פרי אחר", "next": "final_shehakol_drink" }
+        {
+          "label": "Wine or grape juice",
+          "label_he": "יין או מיץ ענבים",
+          "next": "final_hagafen"
+        },
+        {
+          "label": "Olive oil",
+          "label_he": "שמן זית",
+          "next": "final_oil_complex"
+        },
+        {
+          "label": "Any other fruit juice",
+          "label_he": "כל מיץ פרי אחר",
+          "next": "final_shehakol_drink"
+        }
       ],
       "sources": [
         {
@@ -237,7 +376,6 @@
         }
       ]
     },
-
     "tree_fruit_ancillary_intent": {
       "id": "tree_fruit_ancillary_intent",
       "is_final": false,
@@ -245,8 +383,16 @@
       "question": "Do people normally eat this part too, not just the fruit?",
       "question_he": "האם רגילים לאכול גם חלק זה, ולא רק את הפרי?",
       "options": [
-        { "label": "Yes (like caper leaves)", "label_he": "כן (כמו עלי צלף)", "next": "final_haadama_ancillary" },
-        { "label": "No (like a palm tree's inner core)", "label_he": "לא (כמו לב הדקל)", "next": "final_shehakol_ancillary" }
+        {
+          "label": "Yes (like caper leaves)",
+          "label_he": "כן (כמו עלי צלף)",
+          "next": "final_haadama_ancillary"
+        },
+        {
+          "label": "No (like a palm tree's inner core)",
+          "label_he": "לא (כמו לב הדקל)",
+          "next": "final_shehakol_ancillary"
+        }
       ],
       "sources": [
         {
@@ -256,7 +402,6 @@
         }
       ]
     },
-
     "cat_ground_produce": {
       "id": "cat_ground_produce",
       "is_final": false,
@@ -264,8 +409,16 @@
       "question": "Does it grow on a plant that lives for years, or does it grow back fresh from the ground every year — even if it looks tree-like (like a banana or pineapple plant)?",
       "question_he": "האם זה גדל על צמח שחי שנים רבות, או שזה צומח מחדש מהאדמה בכל שנה — גם אם זה נראה כמו עץ (כמו בננה או אננס)?",
       "options": [
-        { "label": "Lives for years, like a tree", "label_he": "חי שנים רבות, כמו עץ", "next": "cat_tree_fruit" },
-        { "label": "Grows back fresh every year, or it's a regular vegetable", "label_he": "צומח מחדש בכל שנה, או שזה ירק רגיל", "next": "ground_produce_type" }
+        {
+          "label": "Lives for years, like a tree",
+          "label_he": "חי שנים רבות, כמו עץ",
+          "next": "cat_tree_fruit"
+        },
+        {
+          "label": "Grows back fresh every year, or it's a regular vegetable",
+          "label_he": "צומח מחדש בכל שנה, או שזה ירק רגיל",
+          "next": "ground_produce_type"
+        }
       ],
       "sources": [
         {
@@ -275,7 +428,6 @@
         }
       ]
     },
-
     "ground_produce_type": {
       "id": "ground_produce_type",
       "is_final": false,
@@ -283,12 +435,19 @@
       "question": "Is it a root or a spice — something that grows underground, or is mainly used as a seasoning?",
       "question_he": "האם זה שורש או תבלין — משהו שגדל מתחת לאדמה, או משמש בעיקר כתבלין?",
       "options": [
-        { "label": "No, it's a regular vegetable, leaf, or produce", "label_he": "לא, זהו ירק רגיל, עלה, או תוצרת", "next": "veggie_eaten_how" },
-        { "label": "Yes, a root, spice, or seasoning", "label_he": "כן, שורש, תבלין, או תיבול", "next": "ground_produce_spice_check" }
+        {
+          "label": "No, it's a regular vegetable, leaf, or produce",
+          "label_he": "לא, זהו ירק רגיל, עלה, או תוצרת",
+          "next": "veggie_eaten_how"
+        },
+        {
+          "label": "Yes, a root, spice, or seasoning",
+          "label_he": "כן, שורש, תבלין, או תיבול",
+          "next": "ground_produce_spice_check"
+        }
       ],
       "sources": []
     },
-
     "veggie_eaten_how": {
       "id": "veggie_eaten_how",
       "is_final": false,
@@ -296,10 +455,26 @@
       "question": "How are you having it?",
       "question_he": "איך אתה אוכל אותו?",
       "options": [
-        { "label": "Raw", "label_he": "חי", "next": "veggie_raw_common_check" },
-        { "label": "Cooked or pickled", "label_he": "מבושל או כבוש", "next": "final_haadama" },
-        { "label": "Juice squeezed from it", "label_he": "מיץ שנסחט ממנו", "next": "final_shehakol_drink" },
-        { "label": "Water it was cooked in", "label_he": "מים שבישלו אותו בהם", "next": "final_haadama_veggie_water" }
+        {
+          "label": "Raw",
+          "label_he": "חי",
+          "next": "veggie_raw_common_check"
+        },
+        {
+          "label": "Cooked or pickled",
+          "label_he": "מבושל או כבוש",
+          "next": "final_haadama"
+        },
+        {
+          "label": "Juice squeezed from it",
+          "label_he": "מיץ שנסחט ממנו",
+          "next": "final_shehakol_drink"
+        },
+        {
+          "label": "Water it was cooked in",
+          "label_he": "מים שבישלו אותו בהם",
+          "next": "final_haadama_veggie_water"
+        }
       ],
       "sources": [
         {
@@ -309,7 +484,6 @@
         }
       ]
     },
-
     "veggie_raw_common_check": {
       "id": "veggie_raw_common_check",
       "is_final": false,
@@ -317,8 +491,16 @@
       "question": "Do people commonly eat this particular vegetable raw too — not just cooked?",
       "question_he": "האם רגילים לאכול ירק זה גם חי — ולא רק מבושל?",
       "options": [
-        { "label": "Yes", "label_he": "כן", "next": "final_haadama" },
-        { "label": "No — it's normally only eaten cooked or pickled (like cabbage, squash, or a dried field bean)", "label_he": "לא — בדרך כלל נאכל רק מבושל או כבוש (כמו כרוב, דלעת, או קטנית יבשה מהשדה)", "next": "final_shehakol_veggie_raw" }
+        {
+          "label": "Yes",
+          "label_he": "כן",
+          "next": "final_haadama"
+        },
+        {
+          "label": "No — it's normally only eaten cooked or pickled (like cabbage, squash, or a dried field bean)",
+          "label_he": "לא — בדרך כלל נאכל רק מבושל או כבוש (כמו כרוב, דלעת, או קטנית יבשה מהשדה)",
+          "next": "final_shehakol_veggie_raw"
+        }
       ],
       "sources": [
         {
@@ -333,7 +515,6 @@
         }
       ]
     },
-
     "ground_produce_spice_check": {
       "id": "ground_produce_spice_check",
       "is_final": false,
@@ -341,8 +522,16 @@
       "question": "Do people ever eat it on its own — even prepared, like candied ginger, or roasted as a home remedy — or is it only ever used to flavor other food?",
       "question_he": "האם אי פעם אוכלים אותו לבד — גם אם מוכן, כמו זנגביל מסוכר, או קלוי כתרופה ביתית — או שהוא משמש רק לתיבול מאכל אחר?",
       "options": [
-        { "label": "Yes, sometimes eaten on its own", "label_he": "כן, לפעמים נאכל לבד", "next": "final_haadama" },
-        { "label": "No, only ever used to flavor other food", "label_he": "לא, משמש רק לתיבול מאכל אחר", "next": "final_shehakol_flavoring" }
+        {
+          "label": "Yes, sometimes eaten on its own",
+          "label_he": "כן, לפעמים נאכל לבד",
+          "next": "final_haadama"
+        },
+        {
+          "label": "No, only ever used to flavor other food",
+          "label_he": "לא, משמש רק לתיבול מאכל אחר",
+          "next": "final_shehakol_flavoring"
+        }
       ],
       "sources": [
         {
@@ -352,7 +541,6 @@
         }
       ]
     },
-
     "mixed_start": {
       "id": "mixed_start",
       "is_final": false,
@@ -360,8 +548,16 @@
       "question": "Are these foods truly mixed or combined together (like a stew, trail mix, or a filled pastry) — or are you eating two separate foods side by side (like bread alongside something salty)?",
       "question_he": "האם המאכלים באמת מעורבים או משולבים יחד (כמו תבשיל, תערובת אגוזים, או בצק ממולא) — או שאתה אוכל שני מאכלים נפרדים זה לצד זה (כמו פת לצד משהו מלוח)?",
       "options": [
-        { "label": "Mixed or combined together", "label_he": "מעורבים או משולבים יחד", "next": "mixed_grain_check" },
-        { "label": "Separate foods, eaten side by side", "label_he": "מאכלים נפרדים, נאכלים זה לצד זה", "next": "mixed_accompaniment_check" }
+        {
+          "label": "Mixed or combined together",
+          "label_he": "מעורבים או משולבים יחד",
+          "next": "mixed_grain_check"
+        },
+        {
+          "label": "Separate foods, eaten side by side",
+          "label_he": "מאכלים נפרדים, נאכלים זה לצד זה",
+          "next": "mixed_accompaniment_check"
+        }
       ],
       "sources": [
         {
@@ -371,7 +567,6 @@
         }
       ]
     },
-
     "mixed_grain_check": {
       "id": "mixed_grain_check",
       "is_final": false,
@@ -379,8 +574,16 @@
       "question": "Does it contain an actual grain product (bread, pasta, cereal, a pastry crust) that you intend to actually eat — not just a trace of flour used to thicken something?",
       "question_he": "האם יש בו מוצר דגן ממשי (לחם, פסטה, דגנים, בצק) שאתה מתכוון לאכול בפועל — ולא רק שביב קמח לסמיכות?",
       "options": [
-        { "label": "Yes, real grain, and I want to eat it", "label_he": "כן, דגן ממשי, ואני רוצה לאכול אותו", "next": "cat_bread" },
-        { "label": "No — no real grain, or it's just a trace/coating", "label_he": "לא — אין דגן ממשי, או שזה רק שכבה דקה", "next": "mixed_dominant_check" }
+        {
+          "label": "Yes, real grain, and I want to eat it",
+          "label_he": "כן, דגן ממשי, ואני רוצה לאכול אותו",
+          "next": "cat_bread"
+        },
+        {
+          "label": "No — no real grain, or it's just a trace/coating",
+          "label_he": "לא — אין דגן ממשי, או שזה רק שכבה דקה",
+          "next": "mixed_dominant_check"
+        }
       ],
       "sources": [
         {
@@ -390,7 +593,6 @@
         }
       ]
     },
-
     "mixed_dominant_check": {
       "id": "mixed_dominant_check",
       "is_final": false,
@@ -398,8 +600,16 @@
       "question": "Is one part clearly the main reason you're eating this — with everything else there just to accompany, flavor, or improve it — or does one part simply make up most of the mixture?",
       "question_he": "האם חלק אחד הוא הסיבה העיקרית לאכילה — והשאר רק מלווה, מתבל, או משפר אותו — או שחלק אחד מהווה את רוב התערובת?",
       "options": [
-        { "label": "Yes, one part is clearly dominant", "label_he": "כן, חלק אחד דומיננטי בבירור", "next": "final_mixed_dominant" },
-        { "label": "No — a few parts feel roughly equally important to me", "label_he": "לא — כמה חלקים חשובים לי באותה מידה בערך", "next": "final_mixed_equal" }
+        {
+          "label": "Yes, one part is clearly dominant",
+          "label_he": "כן, חלק אחד דומיננטי בבירור",
+          "next": "final_mixed_dominant"
+        },
+        {
+          "label": "No — a few parts feel roughly equally important to me",
+          "label_he": "לא — כמה חלקים חשובים לי באותה מידה בערך",
+          "next": "final_mixed_equal"
+        }
       ],
       "sources": [
         {
@@ -409,7 +619,6 @@
         }
       ]
     },
-
     "mixed_accompaniment_check": {
       "id": "mixed_accompaniment_check",
       "is_final": false,
@@ -417,8 +626,16 @@
       "question": "Are you eating the second food only to help you get through the first — like bread to protect your throat from something salty, or to offset a strong drink — and you wouldn't be eating it right now otherwise?",
       "question_he": "האם אתה אוכל את המאכל השני רק כדי לעזור לך עם הראשון — כמו פת להגן על הגרון ממאכל מלוח, או לרכך משקה חזק — ולא היית אוכל אותו עכשיו בלעדיו?",
       "options": [
-        { "label": "Yes, purely to help with the first — I don't want it for its own sake", "label_he": "כן, רק כדי לעזור עם הראשון — לא רוצה אותו בפני עצמו", "next": "final_mixed_accompaniment_secondary" },
-        { "label": "No, I also want to eat it for its own sake", "label_he": "לא, אני גם רוצה לאכול אותו בפני עצמו", "next": "final_mixed_accompaniment_own" }
+        {
+          "label": "Yes, purely to help with the first — I don't want it for its own sake",
+          "label_he": "כן, רק כדי לעזור עם הראשון — לא רוצה אותו בפני עצמו",
+          "next": "final_mixed_accompaniment_secondary"
+        },
+        {
+          "label": "No, I also want to eat it for its own sake",
+          "label_he": "לא, אני גם רוצה לאכול אותו בפני עצמו",
+          "next": "final_mixed_accompaniment_own"
+        }
       ],
       "sources": [
         {
@@ -428,7 +645,6 @@
         }
       ]
     },
-
     "final_mixed_dominant": {
       "id": "final_mixed_dominant",
       "is_final": true,
@@ -447,7 +663,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_mixed_equal": {
       "id": "final_mixed_equal",
       "is_final": true,
@@ -466,7 +681,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_mixed_accompaniment_secondary": {
       "id": "final_mixed_accompaniment_secondary",
       "is_final": true,
@@ -485,7 +699,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_mixed_accompaniment_own": {
       "id": "final_mixed_accompaniment_own",
       "is_final": true,
@@ -504,61 +717,96 @@
       ],
       "bracha_achrona": null
     },
-
     "final_hamotzi": {
       "id": "final_hamotzi",
       "is_final": true,
-      "placeholder": true,
-      "bracha_name": "Hamotzi (Borei Minei Mezonot's bread counterpart — the blessing over bread)",
+      "placeholder": false,
+      "bracha_name": "Hamotzi",
       "bracha_name_he": "המוציא לחם מן הארץ",
-      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who brings forth bread from the earth. [PLACEHOLDER — confirm exact nusach against your source]",
-      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ",
-      "explanation": "EXAMPLE CONTENT. Bread eaten as/with a meal takes the bracha of Hamotzi, which — per the halachic principle of 'ikar v'tafel' — covers other foods eaten as part of that meal.",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who brings forth bread from the earth.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ",
+      "explanation": "Bread eaten as/with a meal takes the bracha of Hamotzi, which — per the halachic principle of 'ikar v'tafel' — covers other foods eaten as part of that meal. Plain flour-and-water bread is always Hamotzi, even for a small amount (a k'zayit). Non-standard baked goods (enriched dough, filled pastry with a savory filling, or dough that was boiled/cooked and then baked or dry pan-fried) also reach full Hamotzi status — either automatically (savory fillings) or once eaten as a genuine meal-sized portion.",
       "sources": [
         {
-          "citation": "TODO — siman 167ff (Hamotzi) [PLACEHOLDER]",
-          "note": "TODO: siman 208, which has the actual pas-vs-mezonot distinction (kevius se'udah), does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need the Alter Rebbe's Seder Birkas HaNehenin / Luach Birkas HaNehenin for his parallel ruling before this can be properly sourced.",
+          "citation": "Seder Birkas HaNehenin, ch. 2:1",
+          "note": "Plain bread of the kind people normally base a meal on always takes Hamotzi and Birkat Hamazon once a k'zayit is eaten, regardless of satisfaction.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:2",
+          "note": "Non-standard breads (enriched dough, thicker soft rolls) upgrade to Hamotzi once eaten as a genuine meal-sized portion — practically, about four egg-sized portions or more, eaten to satisfaction.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:8",
+          "note": "A pastry filled with savory, meal-type food (meat, fish, cheese, or vegetables) keeps full Hamotzi status even for a k'zayit, regardless of quantity, since such a filling doesn't remove the dough from the halachic category of bread.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:12-13",
+          "note": "Dough that was cooked/boiled and then baked in an oven or fried in a pan without much liquid has its bread status fully restored, even in pieces smaller than a k'zayit.",
           "link": ""
         }
       ],
       "bracha_achrona": {
         "name": "Birkat Hamazon (Grace After Meals)",
-        "name_he": "ברכת המזון",
-        "text_en": "[PLACEHOLDER — full Birkat Hamazon text/summary and the shiur/conditions for its obligation to be added]",
-        "text_he": "[PLACEHOLDER]",
+        "name_he": "בִּרְכַת הַמָּזוֹן",
+        "text_en": "The full, multi-paragraph Grace after Meals (four blessings), recited from a bencher or siddur — not reproduced here, as it's a long liturgical text rather than a short bracha. It's required once at least a k'zayit (~28.8cc/1 fl. oz.) of bread has been eaten; Scripturally, the obligation is triggered by eating to the point of satisfaction, but the Sages extended it to apply to a k'zayit even without being full.",
+        "text_he": "[הנוסח המלא אינו מובא כאן — נמצא בסידור/בנצ'ר]",
         "sources": [
-          { "citation": "TODO — siman 184ff (Birkat Hamazon) [PLACEHOLDER]", "note": "TODO: the shiur/conditions for the obligation to say Birkat Hamazon are discussed around siman 184 and 208 in the standard numbering; siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav (confirmed by siman 207:2's footnotes — its subject matter is instead in the Alter Rebbe's own Seder Birkas HaNehenin, ch. 1). Needs that source before this can be filled in.", "link": "" }
+          {
+            "citation": "Seder Birkas HaNehenin, ch. 2:1",
+            "note": "Scripturally, Birkat Hamazon is only required after eating bread to the point of satisfaction; the Sages ordained it be recited even after just a k'zayit.",
+            "link": ""
+          },
+          {
+            "citation": "Seder Birkas HaNehenin, ch. 2:12 (parenthetical)",
+            "note": "Explains that although the count of four separate blessings within Birkat Hamazon is a Rabbinic ordinance, Moshe Rabbeinu himself instituted the wording of the first blessing (Birkat Hazan) as its own self-contained blessing — which is why a doubt about the obligation is treated stringently, similar to a Scriptural-level doubt.",
+            "link": ""
+          }
         ]
       }
     },
-
     "final_mezonot": {
       "id": "final_mezonot",
       "is_final": true,
-      "placeholder": true,
+      "placeholder": false,
       "bracha_name": "Borei Minei Mezonot",
       "bracha_name_he": "בורא מיני מזונות",
-      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates various kinds of sustenance. [PLACEHOLDER — confirm exact nusach against your source]",
-      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא מִינֵי מְזוֹנוֹת",
-      "explanation": "EXAMPLE CONTENT. Grain-based foods (of the five grains) that are not eaten in the manner/quantity of a bread-meal take the bracha of Mezonot rather than Hamotzi.",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates various kinds of sustenance.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא מִינֵי מְזוֹנוֹת",
+      "explanation": "Grain-based baked goods that aren't standard, plain, meal-staple bread — crackers/thin crisp items, or enriched/soft breads and sweet-filled pastries eaten in less than a full meal-sized portion — take the bracha of Mezonot rather than Hamotzi.",
       "sources": [
         {
-          "citation": "TODO — siman 208 (Mezonot) [PLACEHOLDER]",
-          "note": "TODO: same gap — siman 208 does not survive in the Alter Rebbe's Shulchan Aruch HaRav. Need the Seder Birkas HaNehenin / Luach Birkas HaNehenin instead.",
+          "citation": "Seder Birkas HaNehenin, ch. 2:5-6",
+          "note": "Thin, crispy baked goods (trisa) never get Hamotzi, however much is eaten, since they never reach the halachic appearance of bread.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:9",
+          "note": "Dough enriched with milk, fruit juice, or other liquids besides water is generally Mezonot; a meticulous person is stringent and eats it only after already reciting Hamotzi on plain bread.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:2",
+          "note": "Non-standard breads stay at Mezonot unless eaten as a genuine meal-sized portion (roughly four egg-sized portions or more, to the point of satisfaction).",
           "link": ""
         }
       ],
       "bracha_achrona": {
         "name": "Al Hamichyah (Me'ein Shalosh)",
         "name_he": "על המחיה",
-        "text_en": "[PLACEHOLDER — full text and the k'zayit-within-k'dei-achilat-pras condition to be added]",
-        "text_he": "[PLACEHOLDER]",
+        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
+        "text_he": "[PENDING]",
         "sources": [
-          { "citation": "TODO — siman 208-209 (Al Hamichyah) [PLACEHOLDER]", "note": "TODO: confirmed by siman 207:1 — mezonot from the five grains is explicitly excluded from the general Borei Nefashot rule and instead gets \"the one blessing that encapsulates three\" (Al Hamichyah). That text lives in siman 208-209, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.", "link": "" }
+          {
+            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "link": ""
+          }
         ]
       }
     },
-
     "final_haetz": {
       "id": "final_haetz",
       "is_final": true,
@@ -589,7 +837,6 @@
         ]
       }
     },
-
     "final_haetz_unripe": {
       "id": "final_haetz_unripe",
       "is_final": true,
@@ -625,7 +872,6 @@
         ]
       }
     },
-
     "final_shehakol_sweetened_fruit": {
       "id": "final_shehakol_sweetened_fruit",
       "is_final": true,
@@ -656,7 +902,6 @@
         ]
       }
     },
-
     "final_no_bracha": {
       "id": "final_no_bracha",
       "is_final": true,
@@ -680,7 +925,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_no_bracha_water": {
       "id": "final_no_bracha_water",
       "is_final": true,
@@ -699,7 +943,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_shehakol_spoiled": {
       "id": "final_shehakol_spoiled",
       "is_final": true,
@@ -730,7 +973,6 @@
         ]
       }
     },
-
     "final_shehakol_cooking_water": {
       "id": "final_shehakol_cooking_water",
       "is_final": true,
@@ -761,7 +1003,6 @@
         ]
       }
     },
-
     "final_oil_complex": {
       "id": "final_oil_complex",
       "is_final": true,
@@ -780,7 +1021,6 @@
       ],
       "bracha_achrona": null
     },
-
     "final_haadama_ancillary": {
       "id": "final_haadama_ancillary",
       "is_final": true,
@@ -811,7 +1051,6 @@
         ]
       }
     },
-
     "final_shehakol_ancillary": {
       "id": "final_shehakol_ancillary",
       "is_final": true,
@@ -842,7 +1081,6 @@
         ]
       }
     },
-
     "final_haadama": {
       "id": "final_haadama",
       "is_final": true,
@@ -883,7 +1121,6 @@
         ]
       }
     },
-
     "final_shehakol_veggie_raw": {
       "id": "final_shehakol_veggie_raw",
       "is_final": true,
@@ -924,7 +1161,6 @@
         ]
       }
     },
-
     "final_haadama_veggie_water": {
       "id": "final_haadama_veggie_water",
       "is_final": true,
@@ -955,7 +1191,6 @@
         ]
       }
     },
-
     "final_shehakol_flavoring": {
       "id": "final_shehakol_flavoring",
       "is_final": true,
@@ -986,7 +1221,6 @@
         ]
       }
     },
-
     "final_hagafen": {
       "id": "final_hagafen",
       "is_final": true,
@@ -1019,11 +1253,14 @@
         "text_en": "[PLACEHOLDER — full text to be added]",
         "text_he": "[PLACEHOLDER]",
         "sources": [
-          { "citation": "TODO — siman 208 (Al Hagefen) [PLACEHOLDER]", "note": "TODO: confirmed by siman 207:1 — wine/grapes are among the five fruits of the shivat haminim excluded from the general Borei Nefashot rule, and instead get \"the one blessing that encapsulates three\" (Al Hagefen). That text lives in siman 208, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.", "link": "" }
+          {
+            "citation": "TODO — siman 208 (Al Hagefen) [PLACEHOLDER]",
+            "note": "TODO: confirmed by siman 207:1 — wine/grapes are among the five fruits of the shivat haminim excluded from the general Borei Nefashot rule, and instead get \"the one blessing that encapsulates three\" (Al Hagefen). That text lives in siman 208, not extant in the Alter Rebbe's Shulchan Aruch HaRav; need the Seder Birkas HaNehenin instead.",
+            "link": ""
+          }
         ]
       }
     },
-
     "final_shehakol_drink": {
       "id": "final_shehakol_drink",
       "is_final": true,
@@ -1064,7 +1301,6 @@
         ]
       }
     },
-
     "final_shehakol_other": {
       "id": "final_shehakol_other",
       "is_final": true,
@@ -1094,7 +1330,123 @@
           }
         ]
       }
+    },
+    "bread_filling_check": {
+      "id": "bread_filling_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "Is the filling a savory, meal-type food (meat, fish, cheese, or vegetables) — or something sweet (fruit, nuts, honey, sugar)?",
+      "question_he": "האם המילוי הוא מאכל מלוח מסוג ארוחה (בשר, דגים, גבינה, או ירקות) - או משהו מתוק (פירות, אגוזים, דבש, או סוכר)?",
+      "options": [
+        {
+          "label": "Savory — meat, fish, cheese, or vegetables",
+          "label_he": "מלוח - בשר, דגים, גבינה, או ירקות",
+          "next": "final_hamotzi"
+        },
+        {
+          "label": "Sweet — fruit, nuts, honey, or sugar",
+          "label_he": "מתוק - פירות, אגוזים, דבש, או סוכר",
+          "next": "bread_meal_context"
+        }
+      ],
+      "sources": [
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:8-9",
+          "note": "A pastry filled with savory, meal-type food (meat, fish, cheese, or vegetables) keeps full bread status and gets Hamotzi even for just a k'zayit, since the filling doesn't remove the dough from the halachic category of bread. A pastry filled with sweets or fruit is treated as made for enjoyment rather than sustenance, so it stays at Mezonot unless eaten in a meal-sized quantity.",
+          "link": ""
+        }
+      ]
+    },
+    "boiled_then_baked_check": {
+      "id": "boiled_then_baked_check",
+      "is_final": false,
+      "placeholder": false,
+      "question": "After it was boiled or cooked, was it then also baked in an oven or pan-fried without much added liquid (for example, kreplach that get pan-fried afterward, or a baked kugel/casserole)?",
+      "question_he": "לאחר הבישול, האם זה גם נאפה בתנור או טוגן במחבת יבשה יחסית (לדוגמה קרעפלאך שמטגנים אחרי הבישול, או קוגל/תבשיל אפוי)?",
+      "options": [
+        {
+          "label": "Yes, baked or pan-fried afterward",
+          "label_he": "כן, נאפה או טוגן לאחר מכן",
+          "next": "final_hamotzi"
+        },
+        {
+          "label": "No, it stayed boiled/cooked",
+          "label_he": "לא, זה נשאר מבושל",
+          "next": "final_mezonot_boiled"
+        }
+      ],
+      "sources": [
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:12-13",
+          "note": "Dough cooked in a pot (boiled) is never considered bread, however much is eaten, and always takes Mezonot — even in large pieces. But if it's subsequently baked in an oven, or fried in a pan without much liquid, its bread status is fully restored and it takes Hamotzi, even in pieces smaller than a k'zayit.",
+          "link": ""
+        }
+      ]
+    },
+    "final_mezonot_fried": {
+      "id": "final_mezonot_fried",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Minei Mezonot",
+      "bracha_name_he": "בורא מיני מזונות",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates various kinds of sustenance.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא מִינֵי מְזוֹנוֹת",
+      "explanation": "Dough that's fried in oil (donuts, fried dough, pan-fried dumplings) generally stays at Mezonot, even if you'd end up quite full from it — frying doesn't give it the same status as oven-baking. Still, if you plan to eat enough to be fully satisfied, proper practice is to only do so as part of an actual bread meal (i.e., after already saying Hamotzi on real bread), to avoid a doubt about whether Birkat Hamazon is required.",
+      "sources": [
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:11",
+          "note": "Soft dough fried in liquid (like crepes/pancakes) never reaches bread status, however much is eaten — all authorities agree on this, since it was never a firm dough to begin with.",
+          "link": ""
+        },
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:12",
+          "note": "Thicker, bread-like dough that's fried in oil is disputed among the authorities; the Alter Rebbe rules that fundamentally, frying is treated like cooking (i.e., Mezonot) rather than baking — but out of deference to the stringent opinion, one who intends to eat to the point of satisfaction should do so only within a meal that includes real bread.",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Al Hamichyah (Me'ein Shalosh)",
+        "name_he": "על המחיה",
+        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
+        "text_he": "[PENDING]",
+        "sources": [
+          {
+            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "link": ""
+          }
+        ]
+      }
+    },
+    "final_mezonot_boiled": {
+      "id": "final_mezonot_boiled",
+      "is_final": true,
+      "placeholder": false,
+      "bracha_name": "Borei Minei Mezonot",
+      "bracha_name_he": "בורא מיני מזונות",
+      "bracha_text_en": "Blessed are You, Hashem our God, King of the universe, who creates various kinds of sustenance.",
+      "bracha_text_he": "בָּרוּךְ אַתָּה ה' אֱלֹקֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא מִינֵי מְזוֹנוֹת",
+      "explanation": "Dough that was boiled or cooked in a pot (like dumplings, kreplach, or matzah balls) never reaches full bread status, no matter how much you eat or how large the pieces are — it stays at Mezonot. (If it's later baked or dry pan-fried, that changes the outcome — see the previous question.)",
+      "sources": [
+        {
+          "citation": "Seder Birkas HaNehenin, ch. 2:12-13",
+          "note": "\"All authorities agree\" that dough cooked in a pot never enters the halachic category of bread, even if one eats a large quantity and even in large pieces (called knaidlach or kreplach in the text).",
+          "link": ""
+        }
+      ],
+      "bracha_achrona": {
+        "name": "Al Hamichyah (Me'ein Shalosh)",
+        "name_he": "על המחיה",
+        "text_en": "[PENDING — the exact text of Al Hamichyah wasn't spelled out verbatim in Seder Birkas HaNehenin ch. 2; expect it in ch. 7 (\"Details Concerning the Blessings Recited over Other Foods and Beverages\"), not yet reviewed.]",
+        "text_he": "[PENDING]",
+        "sources": [
+          {
+            "citation": "TODO — Seder Birkas HaNehenin, ch. 7 (not yet reviewed) [PLACEHOLDER]",
+            "note": "Confirmed by Shulchan Aruch HaRav 207:1 that mezonot from the five grains gets \"the one blessing that encapsulates three\" (Al Hamichyah) instead of Borei Nefashot. Ch. 2 of Seder Birkas HaNehenin establishes when this blessing applies but doesn't quote its text; ch. 7 is the likely source for the actual wording.",
+            "link": ""
+          }
+        ]
+      }
     }
-
   }
 }
